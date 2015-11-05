@@ -3,5 +3,5 @@
 @section('title'){{'Home'}}@stop
 
 @section('content')
-Home
+<div class="container">Home</div>
 @stop
