@@ -26,7 +26,8 @@ gulp.task('browser-sync', function(){
 	browserSync({
 		proxy: {
 			target: "localhost/us-med/public/"
-		}
+		},
+		notify: false
 	});
 });
 

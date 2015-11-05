@@ -6,7 +6,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="{{ route('home') }}" class="navbar-brand">US Međimurja</a>
+			<a href="{{ route('home') }}" class="navbar-brand">Udruga studenata Međimurja</a>
 		</div> <!-- navbar-header -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
@@ -30,6 +30,11 @@
 						<li><a href="#">ZEP</a></li>
 					</ul>
 				</li>
+				@if(Auth::check())
+				<li><a href="{{ route('auth.logout') }}">Odjava</a></li>
+				@else
+				<li><a href="{{ route('auth.login') }}">Prijava</a></li>
+				@endif
 			</ul>		
 		</div> <!-- collapse -->
 	</div> <!-- container-fluid -->
