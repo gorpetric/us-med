@@ -10,7 +10,7 @@
 		</div> <!-- navbar-header -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Vijesti</a></li>
+				<li><a href="{{ route('news.index') }}">Vijesti</a></li>
 				<li><a href="#">Projekti</a></li>
 				<li><a href="#">Galerija</a></li>
 				<li><a href="#">Kontakt</a></li>

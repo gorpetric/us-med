@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title'){{'Home'}}@stop
+@section('title'){{'Prijava'}}@stop
 
 @section('content')
 <div class="container">

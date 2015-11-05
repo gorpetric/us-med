@@ -33,3 +33,11 @@ Route::get('/odjava', [
 	'uses' => '\App\Http\Controllers\AuthController@getLogout',
 	'as' => 'auth.logout',
 ]);
+
+/*
+* News
+*/
+Route::get('/vijesti', [
+	'uses' => '\App\Http\Controllers\NewsController@index',
+	'as' => 'news.index',
+]);
