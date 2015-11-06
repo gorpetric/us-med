@@ -41,3 +41,7 @@ Route::get('/vijesti', [
 	'uses' => '\App\Http\Controllers\NewsController@index',
 	'as' => 'news.index',
 ]);
+Route::get('/vijest/{slug}', [
+	'uses' => '\App\Http\Controllers\NewsController@getStory',
+	'as' => 'news.story',
+]);

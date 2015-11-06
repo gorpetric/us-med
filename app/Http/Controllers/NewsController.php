@@ -14,4 +14,15 @@ class NewsController extends Controller
     	$news = News::orderBy('created_at', 'desc')->get();
     	return view('news.index')->with('news', $news);
     }
+
+    public function getStory($slug)
+    {
+    	$story = News::where('slug', $slug)->get();
+    	
+    	if(!$story->count()){
+    		return redirect()->route('home');
+    	}
+    	$story=$story[0];
+    	return view('news.story')->with('story', $story);
+    }
 }

@@ -9,8 +9,8 @@
 		<p>Trenutno nema ni jedne vijesti.</p>
 	@else
 		@foreach ($news as $story)
-			<h4>{{ $story->title }}</h4>
-			<p>{{ $story->body }}</p>
+			<h4><a href="{{ route('news.story', ['slug' => $story->slug]) }}">{{ $story->title }}</a></h4>
+			{{ Markdown::parse($story->body) }}
 			<p>{{ $story->created_at->diffForHumans() }}</p>
 		@endforeach
 	@endif
