@@ -41,6 +41,16 @@ Route::get('/vijesti', [
 	'uses' => '\App\Http\Controllers\NewsController@index',
 	'as' => 'news.index',
 ]);
+Route::get('/vijest/nova', [
+	'uses' => '\App\Http\Controllers\NewsController@getNewStory',
+	'as' => 'news.new',
+	'middleware' => ['auth'],
+]);
+Route::post('/vijest/nova', [
+	'uses' => '\App\Http\Controllers\NewsController@postNewStory',
+	'as' => 'news.new',
+	'middleware' => ['auth'],
+]);
 Route::get('/vijest/{slug}', [
 	'uses' => '\App\Http\Controllers\NewsController@getStory',
 	'as' => 'news.story',

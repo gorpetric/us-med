@@ -25,4 +25,22 @@ class NewsController extends Controller
     	$story=$story[0];
     	return view('news.story')->with('story', $story);
     }
+
+    public function getNewStory()
+    {
+        if(!Auth::user()->isAdmin()){
+            return redirect()->route('home');
+        }
+
+        return view('news.new');
+    }
+    public function postNewStory(Request $request)
+    {
+        $this->validate($request, [
+            'title' => 'required',
+            'slug' => 'required',
+            'body' => 'required',
+        ]);
+        dd($request);
+    }
 }
