@@ -38,9 +38,53 @@ class NewsController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'slug' => 'required',
+            'slug' => 'required|unique:news|alpha_dash',
             'body' => 'required',
         ]);
-        dd($request);
+        
+        Auth::user()->news()->create([
+            'title' => $request->input('title'),
+            'body' => $request->input('body'),
+            'slug' => $request->input('slug'),
+        ]);
+
+        return redirect()->route('news.index')->with('info', 'Uspješna objava nove vijesti!');
+    }
+
+    public function getEdit($slug)
+    {
+        $story = News::where('slug', $slug)->get();
+
+        if(!$story->count()){
+            return redirect()->route('home');
+        }
+        $story=$story[0];
+
+        if(Auth::user()->id !== $story->user_id){
+            return redirect()->route('home');
+        }
+
+        return view('news.edit')->with('story', $story);
+    }
+
+    public function postEdit($slug, Request $request)
+    {
+        $story = News::where('slug', $slug)->get();
+        if(!$story->count()){
+            return redirect()->route('home');
+        }
+        $story = $story[0];
+
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
+        Auth::user()->news()->where('id', $story->id)->update([
+            'title' => $request->input('title'),
+            'body' => $request->input('body'),
+        ]);
+
+        return redirect()->back()->with('info', 'Vijest uspješno uređena!');
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\News;
+
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\Access\Authorizable;
@@ -47,5 +49,11 @@ class User extends Model implements AuthenticatableContract,
     public function isAdmin()
     {
         return (bool)$this->admin;
+    }
+
+    public function isStoryAuthor(News $story)
+    {
+        if($this->id === $story->user_id) return true;
+        else return false;
     }
 }

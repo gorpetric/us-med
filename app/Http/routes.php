@@ -55,3 +55,13 @@ Route::get('/vijest/{slug}', [
 	'uses' => '\App\Http\Controllers\NewsController@getStory',
 	'as' => 'news.story',
 ]);
+Route::get('/vijest/{slug}/uredi', [
+	'uses' => '\App\Http\Controllers\NewsController@getEdit',
+	'as' => 'news.edit',
+	'middleware' => ['auth'],
+]);
+Route::post('/vijest/{slug}/uredi', [
+	'uses' => '\App\Http\Controllers\NewsController@postEdit',
+	'as' => 'news.edit',
+	'middleware' => ['auth'],
+]);
