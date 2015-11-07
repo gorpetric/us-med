@@ -4,7 +4,6 @@
 
 @section('content')
 <div class="container">
-	<div class="long" style="margin-top:70px"></div>
 	<h3>Nova vijest</h3>
 	<form action="{{ route('news.new') }}" method="POST" autocomplete="off">
 		<div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">

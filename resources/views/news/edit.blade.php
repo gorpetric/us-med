@@ -4,7 +4,6 @@
 
 @section('content')
 <div class="container">
-	<div class="long" style="margin-top:70px"></div>
 	<h3>Uredi vijest: <small><a href="{{ route('news.story', ['slug' => $story->slug]) }}">{{ $story->title }}</a></small></h3>
 	<form action="{{ route('news.edit', ['slug' => $story->slug]) }}" method="POST" autocomplete="off">
 		<div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">

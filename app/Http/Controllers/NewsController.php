@@ -91,6 +91,6 @@ class NewsController extends Controller
     private function scriptEscape($input)
     {
         return $input;
-        //return preg_replace('#<script(.*?)>(.*?)</script>#is', "```\n" . '$1' . "\n```", $input);
+        //return preg_replace('#<script(.*?)>(.*?)</script>#is', "```\n" . '$2' . "\n```", $input);
     }
 }
