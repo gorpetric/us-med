@@ -44,7 +44,7 @@ class NewsController extends Controller
         
         Auth::user()->news()->create([
             'title' => $request->input('title'),
-            'body' => $request->input('body'),
+            'body' => $this->scriptEscape($request->input('body')),
             'slug' => $request->input('slug'),
         ]);
 
@@ -82,9 +82,15 @@ class NewsController extends Controller
 
         Auth::user()->news()->where('id', $story->id)->update([
             'title' => $request->input('title'),
-            'body' => $request->input('body'),
+            'body' => $this->scriptEscape($request->input('body')),
         ]);
 
         return redirect()->back()->with('info', 'Vijest uspješno uređena!');
+    }
+
+    private function scriptEscape($input)
+    {
+        return $input;
+        //return preg_replace('#<script(.*?)>(.*?)</script>#is', "```\n" . '$1' . "\n```", $input);
     }
 }

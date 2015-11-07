@@ -12,7 +12,7 @@
 		@endif
 	@endif
 	<h3>{{ $story->title }}</h3>
-	{{ Markdown::parse($story->body) }}
+	{!! Markdown::parse($story->body) !!}
 	<p>{{ $story->user->username }}, {{ $story->created_at->diffForHumans() }}</p>
 </div>
 @stop
