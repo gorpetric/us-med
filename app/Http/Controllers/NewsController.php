@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\News;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -39,13 +40,22 @@ class NewsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'slug' => 'required|unique:news|alpha_dash',
+            'image' => 'image',
             'body' => 'required',
         ]);
+
+        if($request->hasFile('image')){
+            $image = md5(Carbon::now()) . '.' . $request->file('image')->guessClientExtension();
+            $request->file('image')->move('img/news', $image);
+        } else {
+            $image = null;
+        }
         
         Auth::user()->news()->create([
             'title' => $request->input('title'),
             'body' => $this->scriptEscape($request->input('body')),
             'slug' => $request->input('slug'),
+            'image' => $image,
         ]);
 
         return redirect()->route('news.index')->with('info', 'Uspješna objava nove vijesti!');

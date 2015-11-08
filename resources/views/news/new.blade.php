@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
 	<h3>Nova vijest</h3>
-	<form action="{{ route('news.new') }}" method="POST" autocomplete="off">
+	<form action="{{ route('news.new') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
 		<div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
 			<label for="title">Naslov:</label>
 			<input type="text" name="title" id="title" class="form-control" placeholder="Naslov" value="{{ Request::old('title') ?: '' }}">
@@ -18,6 +18,13 @@
 			<input type="text" name="slug" id="slug" class="form-control" placeholder="URL" value="{{ Request::old('slug') ?: '' }}">
 			@if($errors->has('slug'))
 				<p class="help-block">{{ $errors->first('slug') }}</p>
+			@endif
+		</div>
+		<div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}"
+			<label for="image">Vijest banner:</label>
+			<input type="file" name="image" id="image" class="form-control">
+			@if($errors->has('image'))
+				<p class="help-block">{{ $errors->first('image') }}</p>
 			@endif
 		</div>
 		<div class="form-goup{{ $errors->has('body') ? ' has-error' : '' }}">
