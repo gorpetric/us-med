@@ -1,9 +1,9 @@
 @extends('app')
 
-@section('title'){{'Home'}}@stop
+@section('title'){{'Galerija'}}@stop
 
 @section('content')
 <div class="container">
-	<h3>Home</h3>
+	<h3>Galerija</h3>
 </div>
 @stop

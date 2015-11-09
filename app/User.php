@@ -46,6 +46,11 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasMany('App\Project', 'user_id');
     }
 
+    public function albums()
+    {
+        return $this->hasMany('App\Album', 'user_id');   
+    }
+
     public function isAdmin()
     {
         return (bool)$this->admin;

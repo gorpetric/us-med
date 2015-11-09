@@ -97,3 +97,11 @@ Route::post('/projekt/{slug}/uredi', [
 	'as' => 'projects.edit',
 	'middleware' => ['auth'],
 ]);
+
+/*
+* Gallery
+*/
+Route::get('/galerija', [
+	'uses' => '\App\Http\Controllers\GalleryController@index',
+	'as' => 'gallery.index',
+]);
