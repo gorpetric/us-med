@@ -16,7 +16,7 @@
 	@else
 		@foreach ($news as $story)
 			<h4><a href="{{ route('news.story', ['slug' => $story->slug]) }}">{{ $story->title }}</a></h4>
-			{{ Markdown::parse($story->body) }}
+			{!! Markdown::setMarkupEscaped(true)->parse($story->body) !!}
 			<p>{{ $story->created_at->diffForHumans() }}</p>
 		@endforeach
 	@endif

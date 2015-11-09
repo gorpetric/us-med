@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Album;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -35,5 +34,26 @@ class GalleryController extends Controller
     		return redirect()->route('home');
     	}
     	return view('gallery.album')->with('album', $album);
+    }
+
+    public function postInsertImages($id, Request $request)
+    {
+    	$album = Album::where('id', $id)->first();
+    	if(!$album){
+    		return redirect()->route('home');
+    	}
+    	$this->validate($request, [
+    		'file' => 'required|image'
+    	]);
+
+    	$name = uniqid() . '.' . $request->file('file')->guessClientExtension();
+
+    	$request->file('file')->move('img/gallery', $name);
+
+    	$image = $album->images()->create([
+    		'name' => $name,
+    	]);
+
+    	return $image;
     }
 }

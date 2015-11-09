@@ -114,3 +114,8 @@ Route::get('/galerija/{id}', [
 	'uses' => '\App\Http\Controllers\GalleryController@getAlbum',
 	'as' => 'gallery.album',
 ]);
+Route::post('/galerija/{id}/unos', [
+	'uses' => '\App\Http\Controllers\GalleryController@postInsertImages',
+	'as' => 'gallery.insert',
+	'middleware' => ['auth'],
+]);

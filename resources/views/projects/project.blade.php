@@ -11,7 +11,7 @@
 		@endif
 	@endif
 	<h3>{{ $project->title }}</h3>
-	{!! Markdown::parse($project->body) !!}
+	{!! Markdown::setMarkupEscaped(true)->parse($project->body) !!}
 	<p>{{ $project->user->username }}, {{ $project->created_at->diffForHumans() }}</p>
 </div>
 @stop

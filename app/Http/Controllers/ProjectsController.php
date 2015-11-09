@@ -51,7 +51,7 @@ class ProjectsController extends Controller
 
         Auth::user()->projects()->create([
             'title' => $request->input('title'),
-            'body' => $this->scriptEscape($request->input('body')),
+            'body' => $request->input('body'),
             'slug' => $request->input('slug'),
             'image' => $image,
         ]);
@@ -88,15 +88,9 @@ class ProjectsController extends Controller
 
         Project::where('id', $project->id)->update([
         	'title' => $request->input('title'),
-            'body' => $this->scriptEscape($request->input('body')),
+            'body' => $request->input('body'),
         ]);
 
         return redirect()->back()->with('info', 'Projekt uspješno uređen!');
-    }
-
-    private function scriptEscape($input)
-    {
-        return $input;
-        //return preg_replace('#<script(.*?)>(.*?)</script>#is', "```\n" . '$2' . "\n```", $input);
     }
 }

@@ -10,8 +10,8 @@
 			<hr/>
 		@endif
 	@endif
-	<h3>{{ $story->title }}</h3>
-	{!! Markdown::parse($story->body) !!}
+	<h3>{{ $story->title }}</h3>	
+	{!! Markdown::setMarkupEscaped(true)->parse($story->body) !!}
 	<p>{{ $story->user->username }}, {{ $story->created_at->diffForHumans() }}</p>
 </div>
 @stop
