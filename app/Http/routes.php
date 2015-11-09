@@ -65,3 +65,35 @@ Route::post('/vijest/{slug}/uredi', [
 	'as' => 'news.edit',
 	'middleware' => ['auth'],
 ]);
+
+/*
+* Projects
+*/
+Route::get('/projekti', [
+	'uses' => '\App\Http\Controllers\ProjectsController@index',
+	'as' => 'projects.index',
+]);
+Route::get('/projekt/novi', [
+	'uses' => '\App\Http\Controllers\ProjectsController@getNewProject',
+	'as' => 'projects.new',
+	'middleware' => ['auth'],
+]);
+Route::post('/projekt/novi', [
+	'uses' => '\App\Http\Controllers\ProjectsController@postNewProject',
+	'as' => 'projects.new',
+	'middleware' => ['auth'],
+]);
+Route::get('/projekt/{slug}', [
+	'uses' => '\App\Http\Controllers\ProjectsController@getProject',
+	'as' => 'projects.project',
+]);
+Route::get('/projekt/{slug}/uredi', [
+	'uses' => '\App\Http\Controllers\ProjectsController@getEdit',
+	'as' => 'projects.edit',
+	'middleware' => ['auth'],
+]);
+Route::post('/projekt/{slug}/uredi', [
+	'uses' => '\App\Http\Controllers\ProjectsController@postEdit',
+	'as' => 'projects.edit',
+	'middleware' => ['auth'],
+]);

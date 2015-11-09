@@ -18,12 +18,12 @@ class NewsController extends Controller
 
     public function getStory($slug)
     {
-    	$story = News::where('slug', $slug)->get();
+    	$story = News::where('slug', $slug)->first();
     	
     	if(!$story->count()){
     		return redirect()->route('home');
     	}
-    	$story=$story[0];
+
     	return view('news.story')->with('story', $story);
     }
 
@@ -63,12 +63,11 @@ class NewsController extends Controller
 
     public function getEdit($slug)
     {
-        $story = News::where('slug', $slug)->get();
+        $story = News::where('slug', $slug)->first();
 
         if(!$story->count()){
             return redirect()->route('home');
         }
-        $story=$story[0];
 
         if(Auth::user()->id !== $story->user_id){
             return redirect()->route('home');
