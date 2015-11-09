@@ -105,3 +105,12 @@ Route::get('/galerija', [
 	'uses' => '\App\Http\Controllers\GalleryController@index',
 	'as' => 'gallery.index',
 ]);
+Route::post('/galerija', [
+	'uses' => '\App\Http\Controllers\GalleryController@postNewAlbum',
+	'as' => 'gallery.index',
+	'middleware' => ['auth'],
+]);
+Route::get('/galerija/{id}', [
+	'uses' => '\App\Http\Controllers\GalleryController@getAlbum',
+	'as' => 'gallery.album',
+]);

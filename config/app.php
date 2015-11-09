@@ -146,6 +146,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         MaxHoffmann\Parsedown\ParsedownServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -196,6 +197,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Markdown'  => MaxHoffmann\Parsedown\ParsedownFacade::class,
+        'Image'     => Intervention\Image\Facades\Image::class,
     ],
 
 ];

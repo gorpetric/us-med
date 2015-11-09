@@ -20,7 +20,7 @@ class NewsController extends Controller
     {
     	$story = News::where('slug', $slug)->first();
     	
-    	if(!$story->count()){
+    	if(!$story){
     		return redirect()->route('home');
     	}
 
@@ -65,7 +65,7 @@ class NewsController extends Controller
     {
         $story = News::where('slug', $slug)->first();
 
-        if(!$story->count()){
+        if(!$story){
             return redirect()->route('home');
         }
 
@@ -78,11 +78,10 @@ class NewsController extends Controller
 
     public function postEdit($slug, Request $request)
     {
-        $story = News::where('slug', $slug)->get();
-        if(!$story->count()){
+        $story = News::where('slug', $slug)->first();
+        if(!$story){
             return redirect()->route('home');
         }
-        $story = $story[0];
 
         $this->validate($request, [
             'title' => 'required',

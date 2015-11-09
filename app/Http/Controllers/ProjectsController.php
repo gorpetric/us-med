@@ -19,7 +19,7 @@ class ProjectsController extends Controller
     {
     	$project = Project::where('slug', $slug)->first();
     	
-    	if(!$project->count()){
+    	if(!$project){
     		return redirect()->route('home');
     	}
     	return view('projects.project')->with('project', $project);
@@ -63,7 +63,7 @@ class ProjectsController extends Controller
     {
         $project = Project::where('slug', $slug)->first();
 
-        if(!$project->count()){
+        if(!$project){
             return redirect()->route('home');
         }
 
@@ -77,7 +77,7 @@ class ProjectsController extends Controller
     {
     	$project = Project::where('slug', $slug)->first();
 
-    	if(!$project->count()){
+    	if(!$project){
     		return redirect()->route('home');
     	}
 
