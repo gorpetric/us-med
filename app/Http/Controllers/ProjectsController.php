@@ -33,9 +33,30 @@ class ProjectsController extends Controller
 
         return view('projects.new');
     }
-    public function postNewProject()
+    public function postNewProject(Request $request)
     {
-    	dd("Posted!");
+    	$this->validate($request, [
+    		'title' => 'required',
+            'slug' => 'required|unique:projects|alpha_dash',
+            'image' => 'image',
+            'body' => 'required',
+    	]);
+
+    	if($request->hasFile('image')){
+            $image = md5(Carbon::now()) . '.' . $request->file('image')->guessClientExtension();
+            $request->file('image')->move('img/projects', $image);
+        } else {
+            $image = null;
+        }
+
+        Auth::user()->projects()->create([
+            'title' => $request->input('title'),
+            'body' => $this->scriptEscape($request->input('body')),
+            'slug' => $request->input('slug'),
+            'image' => $image,
+        ]);
+
+        return redirect()->route('projects.index')->with('info', 'Uspješna objava novog projekta!');
     }
 
     public function getEdit($slug)
@@ -52,8 +73,30 @@ class ProjectsController extends Controller
 
         return view('projects.edit')->with('project', $project);
     }
-    public function postEdit()
+    public function postEdit($slug, Request $request)
     {
-    	dd("Posted!");
+    	$project = Project::where('slug', $slug)->first();
+
+    	if(!$project->count()){
+    		return redirect()->route('home');
+    	}
+
+    	$this->validate($request, [
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
+        Project::where('id', $project->id)->update([
+        	'title' => $request->input('title'),
+            'body' => $this->scriptEscape($request->input('body')),
+        ]);
+
+        return redirect()->back()->with('info', 'Projekt uspješno uređen!');
+    }
+
+    private function scriptEscape($input)
+    {
+        return $input;
+        //return preg_replace('#<script(.*?)>(.*?)</script>#is', "```\n" . '$2' . "\n```", $input);
     }
 }
