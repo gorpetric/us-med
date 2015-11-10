@@ -15,7 +15,7 @@
 					@foreach($album->images as $image)
 						<li style="list-style:none;float:left">
 							<a href="{{ asset('img/gallery/'.$image->name.'') }}" target='_blank'>
-								<img src="{{ asset('img/gallery/'.$image->name.'') }}" width=200 height=200 />
+								<img src="{{ asset('img/gallery/thumbs/'.$image->name.'') }}" width=200 height=200 />
 							</a>
 						</li>
 					@endforeach
@@ -29,6 +29,7 @@
 			<form class="dropzone" id="dropzoneForm" action="{{ route('gallery.insert', ['id'=>$album->id]) }}" method="POST" autocomplete="off" enctype="multipart/form-data">
 				<input type="hidden" name="_token" value="{{ Session::token() }}">
 			</form>
+			<p class="help-block">Slike se automatski postavljaju na server nakon odabira</p>
 		@endif
 	@endif
 </div>
@@ -36,8 +37,10 @@
 
 @section('js')
 <script type="text/javascript">
+var baseUrl = "{{ url('/') }}";
 Dropzone.options.dropzoneForm = {
 	maxFilesize: 3,
+	addRemoveLinks: true,
 	acceptedFiles: 'image/*',
 	success: function(file, response){
 		if(file.status == 'success'){
@@ -47,14 +50,15 @@ Dropzone.options.dropzoneForm = {
 		}
 	}
 };
-var baseUrl = "{{ url('/') }}";
 var handleDropzoneFileUpload = {
 	handleSuccess: function(response){
 		var imgName = response.name;
 		var imgPath = '/img/gallery/'+imgName;
+		var thumbPath = '/img/gallery/thumbs/'+imgName;
 		var fullPath = baseUrl+imgPath;
+		var fullThumbPath = baseUrl+thumbPath;
 		var imageList = $('#albumImages ul');
-		imageList.append('<li style="list-style:none;float:left"><a target="_blank" href="'+fullPath+'"><img src="'+fullPath+'" width=200 height=200 /></a></li>');
+		imageList.append('<li style="list-style:none;float:left"><a target="_blank" href="'+fullPath+'"><img src="'+fullThumbPath+'" width=200 height=200 /></a></li>');
 	},
 	handleError: function(response){
 		console.log('Error');

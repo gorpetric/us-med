@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Album;
 use Illuminate\Http\Request;
+use Image;
 
 class GalleryController extends Controller
 {
@@ -49,6 +50,8 @@ class GalleryController extends Controller
     	$name = uniqid() . '.' . $request->file('file')->guessClientExtension();
 
     	$request->file('file')->move('img/gallery', $name);
+
+    	Image::make('img/gallery/'.$name)->resize(200, 200)->save('img/gallery/thumbs/' . $name, 60);
 
     	$image = $album->images()->create([
     		'name' => $name,

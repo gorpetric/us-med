@@ -51,6 +51,15 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasMany('App\Album', 'user_id');   
     }
 
+    public function getName()
+    {
+        return $this->first_name;
+    }
+    public function getFullName()
+    {
+        return "{$this->first_name} {$this->last_name}";
+    }
+
     public function isAdmin()
     {
         return (bool)$this->admin;
