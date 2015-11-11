@@ -48,8 +48,6 @@ gulp.task('sass', function(){
 gulp.task('watch', function() {
 	gulp.watch('resources/assets/css/**', ['sass']);
 	gulp.watch('resources/views/**').on('change', browserSync.reload);
-	//gulp.watch('public/js/**').on('change', browserSync.reload);
-	//gulp.watch(['app/**', 'public/**']).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['browser-sync', 'watch']);
