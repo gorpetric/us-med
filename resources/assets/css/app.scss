@@ -1,9 +1,11 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "includes/dropzone";
+@import "includes/nav";
+@import "includes/footer";
 *{
 	outline: none;
 }
 body{
-	margin-top:70px;
+	margin-top:50px;
 	margin-bottom: 20px;
 }
