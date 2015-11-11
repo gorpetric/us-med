@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic);
 /*
  * The MIT License
  * Copyright (c) 2012 Matias Meno <m@tias.me>
@@ -326,7 +327,7 @@
   background-color: white;
   box-shadow: 0px 1px 10px black; }
 
-header {
+header.home-header {
   background-image: url("../img/land1.jpg");
   background-size: cover;
   background-position: center;
@@ -351,11 +352,25 @@ header {
       -ms-flex-align: center;
           align-items: center;
   color: white;
-  overflow: hidden; }
+  overflow: hidden;
+  padding: 5px; }
+  header.home-header .parallax-title {
+    font-size: 60px;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px; }
+
+footer {
+  color: white;
+  background-color: #262626;
+  padding: 40px 0px;
+  width: 100%; }
 
 * {
   outline: none; }
 
 body {
   margin-top: 50px;
-  margin-bottom: 20px; }
+  font-family: "Open Sans", sans-serif;
+  background-color: #eee; }
