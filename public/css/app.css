@@ -405,10 +405,32 @@ footer {
   .home-projects .panel .panel-body a {
     text-decoration: none; }
 
+.vijest {
+  margin-top: 70px; }
+  .vijest .vijest-banner {
+    margin: 20px auto;
+    max-height: 50vh; }
+  .vijest .vijest-body {
+    background-color: #e6e6e6;
+    margin: 20px 0;
+    padding: 20px 0;
+    max-width: 100%; }
+
+.projekt {
+  margin-top: 70px; }
+  .projekt .projekt-banner {
+    margin: 20px auto;
+    max-height: 50vh; }
+  .projekt .projekt-body {
+    background-color: #e6e6e6;
+    margin: 20px 0;
+    padding: 20px 0;
+    max-width: 100%; }
+
 * {
   outline: none; }
 
 body {
   margin-top: 50px;
   font-family: "Open Sans", sans-serif;
-  background-color: #eee; }
+  background: #eee; }

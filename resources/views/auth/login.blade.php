@@ -3,12 +3,12 @@
 @section('title'){{'Prijava'}}@stop
 
 @section('content')
-<div class="container">
+<div class="container login-page">
 	<h3>Prijava</h3>
 	<form action="{{ route('auth.login') }}" method="POST" class="form-inline" autocomplete="off">
 		<div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
 			<label for="username">Korisničko ime:</label>
-			<input type="text" class="form-control" name="username" id="username" placeholder="Korisničko ime" value="{{ Request::old('username') ?: '' }}">
+			<input type="text" class="form-control" name="username" id="username" placeholder="Korisničko ime" value="{{ Request::old('username') ?: '' }}" autofocus>
 		</div>
 		<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 			<label for="password">Lozinka:</label>

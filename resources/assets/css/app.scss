@@ -4,11 +4,13 @@
 @import "includes/nav";
 @import "includes/footer";
 @import "includes/home";
+@import "includes/vijest";
+@import "includes/projekt";
 *{
 	outline: none;
 }
 body{
 	margin-top:50px;
 	font-family: "Open Sans", sans-serif;
-	background-color: #eee;
+	background: #eee;
 }
