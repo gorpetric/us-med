@@ -22,8 +22,56 @@
 			</p>
 		</div>
 	</div>
-	<img style='margin:0 auto; margin-top:40px' class='img-responsive' src="{{ asset('img/vijesti.png') }}">
-	<img style='margin:0 auto; margin-top:40px' class='img-responsive' src="{{ asset('img/projekti.png') }}">
+	<div class="home-news">
+		<img class='img-responsive' src="{{ asset('img/vijesti.png') }}">
+		@if(!$news->count())
+		<p class="help-block" style="text-align:center">Trenutno nema ni jedne vijesti.</p>
+		@else
+			<div class="row">
+			@foreach($news as $story)
+				<div class="col-sm-6 col-md-3">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<div class="panel-title">
+								{{ $story->title }}
+							</div>
+						</div>
+						<div class="panel-body">
+							<a href="{{ route('news.story', ['slug'=>$story->slug]) }}"><img class='img-responsive img-rounded' src="{{ asset('img/news/' . $story->image) }}"></a>
+							<p>{{ str_limit($story->body, 200) }}</p>
+							<a href="{{ route('news.story', ['slug'=>$story->slug]) }}"><button class='btn btn-default'>Pročitaj vijest</button></a>
+						</div>
+					</div>
+				</div>
+			@endforeach
+			</div>
+			<p style='text-align:right'><a href="{{ route('news.index') }}">Starije vijesti</a></p>
+		@endif
+	</div> <!-- end home-news -->
+	<div class="home-projects">
+		<img class='img-responsive' src="{{ asset('img/projekti.png') }}">
+		@if(!$projects->count())
+			<p class="help-block" style="text-align:center">Trenutno nema ni jednog projekta.</p>
+		@else
+			<div class="row">
+			@foreach($projects as $project)
+				<div class="col-sm-6 col-md-3">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<div class="panel-title">{{ $project->title }}</div>
+						</div>
+						<div class="panel-body">
+							<a href="{{ route('projects.project', ['slug'=>$project->slug]) }}"><img class='img-responsive img-rounded' src="{{ asset('img/projects/' . $project->image) }}"></a>
+							<p>{{ str_limit($project->body, 200) }}</p>
+							<a href="{{ route('projects.project', ['slug'=>$project->slug]) }}"><button class='btn btn-default'>Više o projektu</button></a>
+						</div>
+					</div>
+				</div>
+			@endforeach
+			</div>
+			<p style='text-align:right'><a href="{{ route('projects.index') }}">Svi projekti</a></p>
+		@endif
+	</div><!-- end home-projects -->
 </div>
 @stop
 
