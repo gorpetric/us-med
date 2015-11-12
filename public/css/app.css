@@ -365,7 +365,8 @@ footer {
   color: white;
   background-color: #262626;
   padding: 40px 0px;
-  width: 100%; }
+  width: 100%;
+  margin-top: 40px; }
 
 .home-news img {
   margin: 0 auto;
@@ -431,6 +432,22 @@ footer {
   outline: none; }
 
 body {
-  margin-top: 50px;
   font-family: "Open Sans", sans-serif;
-  background: #eee; }
+  background: #eee;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh; }
+
+.all-content {
+  margin-top: 50px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }

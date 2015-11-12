@@ -10,7 +10,13 @@
 	outline: none;
 }
 body{
-	margin-top:50px;
 	font-family: "Open Sans", sans-serif;
 	background: #eee;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.all-content{
+	margin-top: 50px;
+	flex: 1;
 }
