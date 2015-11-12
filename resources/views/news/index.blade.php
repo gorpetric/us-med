@@ -3,6 +3,7 @@
 @section('title'){{'Vijesti'}}@stop
 
 @section('content')
+<header class="news-header"></header>
 <div class="container">
 	<h3>Vijesti</h3><hr/>
 	@if(Auth::check())

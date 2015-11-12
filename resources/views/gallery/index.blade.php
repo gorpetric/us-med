@@ -3,6 +3,7 @@
 @section('title'){{'Galerija'}}@stop
 
 @section('content')
+<header class="gallery-header"></header>
 <div class="container">
 	<h3>Galerija</h3>
 	@if(Auth::check())

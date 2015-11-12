@@ -3,6 +3,7 @@
 @section('title'){{'Projekti'}}@stop
 
 @section('content')
+<header class="projects-header"></header>
 <div class="container">
 	<h3>Projekti</h3><hr/>
 	@if(Auth::check())
