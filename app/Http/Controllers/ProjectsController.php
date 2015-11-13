@@ -56,7 +56,11 @@ class ProjectsController extends Controller
             'image' => $image,
         ]);
 
-        return redirect()->route('projects.index')->with('info', 'Uspješna objava novog projekta!');
+        notify()->flash('Uspješna objava novog projekta', 'success', [
+            'timer' => 2500,
+            'noConfirm' => true,
+        ]);
+        return redirect()->route('projects.index');
     }
 
     public function getEdit($slug)
@@ -91,6 +95,10 @@ class ProjectsController extends Controller
             'body' => $request->input('body'),
         ]);
 
-        return redirect()->back()->with('info', 'Projekt uspješno uređen!');
+        notify()->flash('Projekt uspješno uređen', 'success', [
+            'timer' => 2000,
+            'noConfirm' => true,
+        ]);
+        return redirect()->back();
     }
 }

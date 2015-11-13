@@ -25,7 +25,11 @@ class GalleryController extends Controller
     		'title' => $request->input('title'),
     	]);
 
-    	return redirect()->back()->with('info', 'Uspješno kreiranje novog albuma.');
+        notify()->flash('Uspješno kreiranje novog albuma', 'success', [
+            'noConfirm' => true,
+            'timer' => 2000,
+        ]);
+    	return redirect()->back();
     }
 
     public function getAlbum($id)

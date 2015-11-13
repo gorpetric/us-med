@@ -8,7 +8,8 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
         "maxhoffmann/parsedown-laravel": "dev-master",
-        "intervention/image": "^2.3"
+        "intervention/image": "^2.3",
+        "codecourse/notify": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

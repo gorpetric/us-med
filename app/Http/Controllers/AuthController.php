@@ -22,10 +22,18 @@ class AuthController extends Controller
 
     	if(!Auth::attempt($request->only(['username', 'password'])))
     	{
-    		return redirect()->back()->with('info', 'Pogrešni korisnički podaci!');
+    		notify()->flash('Pogrešni korisnički podaci', 'error', [
+                'timer' => 3000,
+                'noConfirm' => true,
+            ]);
+            return redirect()->back();
     	}
 
-    	return redirect()->route('home')->with('info', 'Uspješna prijava!');
+        notify()->flash('Uspješna prijava', 'success', [
+            'timer' => 2000,
+            'noConfirm' => true,
+        ]);
+    	return redirect()->route('home');
     }
 
     public function getLogout()

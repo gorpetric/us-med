@@ -58,7 +58,11 @@ class NewsController extends Controller
             'image' => $image,
         ]);
 
-        return redirect()->route('news.index')->with('info', 'Uspješna objava nove vijesti!');
+        notify()->flash('Uspješna objava nove vijesti', 'success', [
+            'timer' => 2500,
+            'noConfirm' => true,
+        ]);
+        return redirect()->route('news.index');
     }
 
     public function getEdit($slug)
@@ -93,6 +97,10 @@ class NewsController extends Controller
             'body' => $request->input('body'),
         ]);
 
-        return redirect()->back()->with('info', 'Vijest uspješno uređena!');
+        notify()->flash('Vijest uspješno uređena', 'success', [
+            'timer' => 2000,
+            'noConfirm' => true,
+        ]);
+        return redirect()->back();
     }
 }
