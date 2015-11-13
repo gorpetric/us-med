@@ -14,7 +14,7 @@
 				<ul>
 					@foreach($album->images as $image)
 						<li style="list-style:none;float:left">
-							<a href="{{ asset('img/gallery/'.$image->name.'') }}" target='_blank'>
+							<a href="{{ asset('img/gallery/'.$image->name.'') }}" target='_blank' data-lightbox='album'>
 								<img src="{{ asset('img/gallery/thumbs/'.$image->name.'') }}" width=200 height=200 />
 							</a>
 						</li>
@@ -58,7 +58,7 @@ var handleDropzoneFileUpload = {
 		var fullPath = baseUrl+imgPath;
 		var fullThumbPath = baseUrl+thumbPath;
 		var imageList = $('#albumImages ul');
-		imageList.append('<li style="list-style:none;float:left"><a target="_blank" href="'+fullPath+'"><img src="'+fullThumbPath+'" width=200 height=200 /></a></li>');
+		imageList.append('<li style="list-style:none;float:left"><a target="_blank" href="'+fullPath+'" data-lightbox="album"><img src="'+fullThumbPath+'" width=200 height=200 /></a></li>');
 	},
 	handleError: function(response){
 		console.log('Error');
