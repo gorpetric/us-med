@@ -40,7 +40,7 @@ class NewsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'slug' => 'required|unique:news|alpha_dash',
-            'image' => 'image',
+            'image' => 'required|image',
             'body' => 'required',
         ]);
 

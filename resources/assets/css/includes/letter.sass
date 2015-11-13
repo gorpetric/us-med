@@ -1,0 +1,47 @@
+.letter
+	background: #fff
+	box-shadow: 0 0 10px rgba(0,0,0,0.6)
+	margin: 0 auto
+	min-height: 300px
+	padding: 24px
+	position: relative
+	margin: 20px auto
+	z-index: 2
+	max-width: 100%
+	width: 100%
+
+	@media(max-width: 346px)
+		box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.55)
+
+.letter:before, .letter:after
+	content: ""
+	height: 98%
+	position: absolute
+	width: 100%
+	z-index: -1
+
+.letter:before
+	background: #fafafa
+	box-shadow: 0 0 8px rgba(0,0,0,0.5)
+	left: -5px
+	top: 4px
+	transform: rotate(-2deg)
+
+	@media(max-width: 346px)
+		transform: rotate(0)
+		left: 0
+		top: 0
+		position: relative
+
+.letter:after
+	background: #f6f6f6
+	box-shadow: 0 0 3px rgba(0,0,0,0.5)
+	right: -3px
+	top: 1px
+	transform: rotate(1deg)
+
+	@media(max-width: 346px)
+		transform: rotate(0)
+		right: 0
+		top: 0
+		position: relative

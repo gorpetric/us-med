@@ -38,7 +38,7 @@ class ProjectsController extends Controller
     	$this->validate($request, [
     		'title' => 'required',
             'slug' => 'required|unique:projects|alpha_dash',
-            'image' => 'image',
+            'image' => 'required|image',
             'body' => 'required',
     	]);
 

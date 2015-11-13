@@ -10,15 +10,20 @@
 </div>
 <div class="vijest-body">
 	<div class="container">
-		{!! Markdown::setMarkupEscaped(true)->parse($story->body) !!}
+		<div class="letter">
+			{!! Markdown::setMarkupEscaped(true)->parse($story->body) !!}
+		</div>
 	</div>
 </div>
 <div class="container">
-	{{ $story->user->getFullName() }}, {{ $story->created_at->diffForHumans() }}
+	<p style='text-align:center'>{{ $story->user->getFullName() }}, {{ $story->created_at->diffForHumans() }}</p>
 	@if(Auth::check())
 		@if(Auth::user()->isStoryAuthor($story))
-			<span class='glyphicon glyphicon-minus'></span>
+			<p style='text-align:center'>
 			<a href="{{ route('news.edit', ['slug' => $story->slug]) }}">Uredi vijest</a>
+			<span class='glyphicon glyphicon-minus'></span>
+			<a href="{{ route('news.edit', ['slug' => $story->slug]) }}">Obriši vijest</a>
+			</p>
 		@endif
 	@endif
 </div>

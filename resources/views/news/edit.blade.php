@@ -13,16 +13,9 @@
 				<p class="help-block">{{ $errors->first('title') }}</p>
 			@endif
 		</div>
-		<div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
-			<label for="slug">URL:</label>
-			<input type="text" name="slug" id="slug" class="form-control" placeholder="URL" value="{{ Request::old('slug') ?: $story->slug }}" disabled>
-			@if($errors->has('slug'))
-				<p class="help-block">{{ $errors->first('slug') }}</p>
-			@endif
-		</div>
 		<div class="form-goup{{ $errors->has('body') ? ' has-error' : '' }}">
 			<label for="body">Sadržaj:</label>
-			<textarea name="body" id="body" rows="5" class="form-control" placeholder="Sadržaj" style="resize:vertical">{{ Request::old('body') ?: $story->body }}</textarea>
+			<textarea name="body" id="body" rows="10" class="form-control" placeholder="Sadržaj" style="resize:vertical">{{ Request::old('body') ?: $story->body }}</textarea>
 			@if($errors->has('body'))
 				<p class="help-block">{{ $errors->first('body') }}</p>
 			@endif

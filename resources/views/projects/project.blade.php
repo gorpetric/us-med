@@ -10,15 +10,20 @@
 </div>
 <div class="projekt-body">
 	<div class="container">
-		{!! Markdown::setMarkupEscaped(true)->parse($project->body) !!}
+		<div class="letter">
+			{!! Markdown::setMarkupEscaped(true)->parse($project->body) !!}
+		</div>
 	</div>
 </div>
 <div class="container">
-	{{ $project->user->getFullName() }}, {{ $project->created_at->diffForHumans() }}
+	<p style='text-align:center'>{{ $project->user->getFullName() }}, {{ $project->created_at->diffForHumans() }}</p>
 	@if(Auth::check())
 		@if(Auth::user()->isAdmin())
-			<span class='glyphicon glyphicon-minus'></span>
+			<p style='text-align:center'>
 			<a href="{{ route('projects.edit', ['slug' => $project->slug]) }}">Uredi projekt</a>
+			<span class='glyphicon glyphicon-minus'></span>
+			<a href="{{ route('projects.edit', ['slug' => $project->slug]) }}">Obriši projekt</a>
+			</p>
 		@endif
 	@endif
 </div>
