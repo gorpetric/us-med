@@ -17,7 +17,7 @@
 	@else
 		@foreach ($projects as $project)
 			<h4><a href="{{ route('projects.project', ['slug' => $project->slug]) }}">{{ $project->title }}</a></h4>
-			{!! Markdown::setMarkupEscaped(true)->parse($project->body) !!}
+			{{ stripMarkdown(str_limit($project->body, 250)) }}
 			<p>{{ $project->created_at->diffForHumans() }}</p>
 		@endforeach
 	@endif

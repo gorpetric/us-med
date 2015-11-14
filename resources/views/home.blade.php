@@ -9,7 +9,7 @@
 <div class="container" style="margin-top:20px">
 	<div class="row">
 		<div class="col-sm-6">
-			<img style="margin:0 auto" class="img-responsive img-circle" src="http://placehold.it/200x200" />
+			<img class="img-responsive home-logo" src="{{ asset('img/LOGOvektorski.png') }}" />
 		</div>
 		<div class="col-sm-6">
 			<p><strong>Udruga studenata Međimurja</strong> jedna je od studentskih zavičajnih udruga koje djeluju na <strong>Sveučilištu u Zagrebu</strong> sa sjedištem u ulici <strong>Ilica 10/III</strong>. Cilj postojanja Udruge je okupljanje i povezivanje što većeg broja međimurskih studenata, te promicanje i zaštita njihovih interesa. Razmjena iskustava, organiziranje međusobnih druženja, stvaranje veza sa drugim srodnim udrugama te pomaganje novim studentima na početku njihovog fakultetskog obrazovanja samo su neke od aktivnosti koje Udruga promiče i kojim se bavi.</p>
@@ -38,7 +38,7 @@
 						</div>
 						<div class="panel-body">
 							<a href="{{ route('news.story', ['slug'=>$story->slug]) }}"><img class='img-responsive img-rounded' src="{{ asset('img/news/' . $story->image) }}"></a>
-							<p>{{ str_limit($story->body, 200) }}</p>
+							<p>{{ stripMarkdown(str_limit($story->body, 200)) }}</p>
 							<a href="{{ route('news.story', ['slug'=>$story->slug]) }}"><button class='btn btn-default'>Pročitaj vijest</button></a>
 						</div>
 					</div>
@@ -62,7 +62,7 @@
 						</div>
 						<div class="panel-body">
 							<a href="{{ route('projects.project', ['slug'=>$project->slug]) }}"><img class='img-responsive img-rounded' src="{{ asset('img/projects/' . $project->image) }}"></a>
-							<p>{{ str_limit($project->body, 200) }}</p>
+							<p>{{ stripMarkdown(str_limit($project->body, 200)) }}</p>
 							<a href="{{ route('projects.project', ['slug'=>$project->slug]) }}"><button class='btn btn-default'>Više o projektu</button></a>
 						</div>
 					</div>

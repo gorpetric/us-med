@@ -13,13 +13,6 @@
 				<p class="help-block">{{ $errors->first('title') }}</p>
 			@endif
 		</div>
-		<div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
-			<label for="slug">URL:</label>
-			<input type="text" name="slug" id="slug" class="form-control" placeholder="URL" value="{{ Request::old('slug') ?: '' }}">
-			@if($errors->has('slug'))
-				<p class="help-block">{{ $errors->first('slug') }}</p>
-			@endif
-		</div>
 		<div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
 			<label for="image">Vijest banner:</label>
 			<input type="file" name="image" id="image" class="form-control">

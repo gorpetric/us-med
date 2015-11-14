@@ -1481,6 +1481,12 @@ footer {
   width: 100%;
   margin-top: 40px; }
 
+.home-logo {
+  margin: 0 auto;
+  margin-bottom: 15px;
+  max-width: 250px;
+  max-height: 250px; }
+
 .home-news img {
   margin: 0 auto;
   margin-top: 40px;

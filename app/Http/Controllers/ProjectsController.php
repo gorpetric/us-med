@@ -37,7 +37,6 @@ class ProjectsController extends Controller
     {
     	$this->validate($request, [
     		'title' => 'required',
-            'slug' => 'required|unique:projects|alpha_dash',
             'image' => 'required|image',
             'body' => 'required',
     	]);
@@ -49,10 +48,18 @@ class ProjectsController extends Controller
             $image = null;
         }
 
+        $slugInit = str_slug($request->input('title'));
+        $slugDB = Project::where('slug', $slugInit)->first();
+        if($slugDB || $slugInit == 'novi'){
+            $slug = $slugInit . '-' . uniqid();
+        } else {
+            $slug = $slugInit;
+        }
+
         Auth::user()->projects()->create([
             'title' => $request->input('title'),
             'body' => $request->input('body'),
-            'slug' => $request->input('slug'),
+            'slug' => $slug,
             'image' => $image,
         ]);
 
