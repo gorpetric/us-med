@@ -1539,6 +1539,17 @@ footer {
   .home-projects .panel .panel-body a {
     text-decoration: none; }
 
+.statut-category-title {
+  text-decoration: underline; }
+
+.statut-clanak-title {
+  display: block;
+  text-align: center; }
+
+.statut-clanak-body .indent {
+  display: inline-block;
+  text-indent: 2em; }
+
 .vijest .vijest-banner {
   margin: 20px auto;
   max-height: 40vh;

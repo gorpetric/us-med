@@ -18,4 +18,24 @@ class HomeController extends Controller
         	'projects' => $projects,
         ]);
     }
+
+    public function getVodstvo()
+    {
+    	return view('pages.vodstvo');
+    }
+
+    public function getPovijest()
+    {
+    	return view('pages.povijest');
+    }
+
+    public function getStatut()
+    {
+    	return view('pages.statut');
+    }
+
+    public function getKontakt()
+    {
+    	return view('pages.kontakt');
+    }
 }

@@ -17,12 +17,12 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">O nama <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Vodstvo</a></li>
-						<li><a href="#">Povijest</a></li>
-						<li><a href="#">Statut</a></li>
+						<li><a href="{{ route('pages.vodstvo') }}">Vodstvo</a></li>
+						<li><a href="{{ route('pages.povijest') }}">Povijest</a></li>
+						<li><a href="{{ route('pages.statut') }}">Statut</a></li>
 					</ul>
 				</li>
-				<li><a href="#">Kontakt</a></li>
+				<li><a href="{{ route('pages.kontakt') }}">Kontakt</a></li>
 				@if(Auth::check())
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->getName() }} <span class="caret"></span></a>

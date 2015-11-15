@@ -119,3 +119,23 @@ Route::post('/galerija/{id}/unos', [
 	'as' => 'gallery.insert',
 	'middleware' => ['auth'],
 ]);
+
+/*
+* Pages
+*/
+Route::get('/vodstvo', [
+	'uses' => '\App\Http\Controllers\HomeController@getVodstvo',
+	'as' => 'pages.vodstvo'
+]);
+Route::get('/povijest', [
+	'uses' => '\App\Http\Controllers\HomeController@getPovijest',
+	'as' => 'pages.povijest'
+]);
+Route::get('/statut', [
+	'uses' => '\App\Http\Controllers\HomeController@getStatut',
+	'as' => 'pages.statut'
+]);
+Route::get('/kontakt', [
+	'uses' => '\App\Http\Controllers\HomeController@getKontakt',
+	'as' => 'pages.kontakt'
+]);

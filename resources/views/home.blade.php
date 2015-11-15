@@ -14,11 +14,11 @@
 		<div class="col-sm-6">
 			<p><strong>Udruga studenata Međimurja</strong> jedna je od studentskih zavičajnih udruga koje djeluju na <strong>Sveučilištu u Zagrebu</strong> sa sjedištem u ulici <strong>Ilica 10/III</strong>. Cilj postojanja Udruge je okupljanje i povezivanje što većeg broja međimurskih studenata, te promicanje i zaštita njihovih interesa. Razmjena iskustava, organiziranje međusobnih druženja, stvaranje veza sa drugim srodnim udrugama te pomaganje novim studentima na početku njihovog fakultetskog obrazovanja samo su neke od aktivnosti koje Udruga promiče i kojim se bavi.</p>
 			<p style='text-align:center'>
-				<a href="#">Vodstvo</a>
+				<a href="{{ route('pages.vodstvo') }}">Vodstvo</a>
 				<span class='glyphicon glyphicon-minus'></span>
-				<a href="#">Povijest</a>
+				<a href="{{ route('pages.povijest') }}">Povijest</a>
 				<span class='glyphicon glyphicon-minus'></span>
-				<a href="#">Statut</a>
+				<a href="{{ route('pages.statut') }}">Statut</a>
 			</p>
 		</div>
 	</div>
