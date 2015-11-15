@@ -1540,15 +1540,19 @@ footer {
     text-decoration: none; }
 
 .statut-category-title {
-  text-decoration: underline; }
+  text-decoration: underline;
+  font-weight: bold; }
 
 .statut-clanak-title {
   display: block;
-  text-align: center; }
+  text-align: center;
+  font-weight: bold; }
 
-.statut-clanak-body .indent {
-  display: inline-block;
-  text-indent: 2em; }
+.statut-clanak-body {
+  text-align: justify; }
+  .statut-clanak-body .indent {
+    display: inline-block;
+    text-indent: 2em; }
 
 .vijest .vijest-banner {
   margin: 20px auto;
