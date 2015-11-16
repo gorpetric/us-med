@@ -1685,15 +1685,6 @@ header.gallery-header {
         -webkit-transition: all 300ms ease-in-out;
                 transition: all 300ms ease-in-out; }
 
-.fb-page {
-  position: relative;
-  margin-top: 20px;
-  max-width: 100%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%); }
-
 * {
   outline: none; }
 

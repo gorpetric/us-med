@@ -17,12 +17,12 @@
 			<div class="col-sm-9">28396279066</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-3">Račun:</div>
-			<div class="col-sm-9">2340009-1110513415</div>
+			<div class="col-sm-3">IBAN:</div>
+			<div class="col-sm-9">HR2423400091110513415</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-3">Mobitel:</div>
-			<div class="col-sm-9">098 811 489</div>
+			<div class="col-sm-9">098 195 0924</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-3">E-mail:</div>
@@ -42,19 +42,6 @@
 		</div>		
 	</div>
 </div> <!-- row -->
-<div class="fb-page" data-href="https://www.facebook.com/UdrugaStudenataMedjimurja" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/UdrugaStudenataMedjimurja"><a href="https://www.facebook.com/UdrugaStudenataMedjimurja">Udruga studenata Međimurja</a></blockquote></div></div>
 </div> <!-- container -->
-@stop
-
-@section('js')
-<script>
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
 @stop
 
