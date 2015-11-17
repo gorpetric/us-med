@@ -4,26 +4,7 @@
 
 @section('content')
 <div class="container">
-	<h3><small>Album: </small>{{$album->title}}</h3><hr/>
-	@if(!$album->images()->count())
-		<p>Album prazan</p>
-	@endif
-	<div class="row">
-		<div class="col-md-12">
-			<div id="albumImages">
-				<ul>
-					@foreach($album->images as $image)
-						<li style="list-style:none;float:left">
-							<a href="{{ asset('img/gallery/'.$image->name.'') }}" target='_blank' data-lightbox='album'>
-								<img src="{{ asset('img/gallery/thumbs/'.$image->name.'') }}" width=200 height=200 />
-							</a>
-						</li>
-					@endforeach
-				</ul>
-			</div>
-		</div>
-	</div>
-	
+	<h2 style='text-align:center'><small>Album</small><br/>{{$album->title}}</h2>
 	@if(Auth::check())
 		@if(Auth::user()->isAdmin())
 			<form class="dropzone" id="dropzoneForm" action="{{ route('gallery.insert', ['id'=>$album->id]) }}" method="POST" autocomplete="off" enctype="multipart/form-data">
@@ -32,6 +13,23 @@
 			<p class="help-block">Slike se automatski postavljaju na server nakon odabira</p>
 		@endif
 	@endif
+	<hr style='border-color:#262626'>
+</div>
+<div class="container-fluid">
+	@if(!$album->images()->count())
+		<p>Album prazan</p>
+	@endif
+	<div class="row">
+		<div class="col-md-12">
+			<div id="albumImages">
+				@foreach($album->images as $image)
+					<a href="{{ asset('img/gallery/'.$image->name.'') }}" target='_blank' data-lightbox='album'>
+						<img class='img-responsive' src="{{ asset('img/gallery/thumbs/'.$image->name.'') }}">
+					</a>
+				@endforeach
+			</div>
+		</div>
+	</div>
 </div>
 @stop
 
@@ -57,8 +55,8 @@ var handleDropzoneFileUpload = {
 		var thumbPath = '/img/gallery/thumbs/'+imgName;
 		var fullPath = baseUrl+imgPath;
 		var fullThumbPath = baseUrl+thumbPath;
-		var imageList = $('#albumImages ul');
-		imageList.append('<li style="list-style:none;float:left"><a target="_blank" href="'+fullPath+'" data-lightbox="album"><img src="'+fullThumbPath+'" width=200 height=200 /></a></li>');
+		var imageList = $('#albumImages');
+		imageList.append('<a target="_blank" href="'+fullPath+'" data-lightbox="album"><img class="img-responsive" src="'+fullThumbPath+'"></a>');
 	},
 	handleError: function(response){
 		console.log('Error');

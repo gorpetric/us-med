@@ -1617,6 +1617,30 @@ header.gallery-header {
   background-attachment: fixed;
   height: 30vh; }
 
+#albumImages {
+  text-align: center; }
+  #albumImages a {
+    text-decoration: none; }
+  #albumImages img {
+    display: inline-block;
+    border: 3px solid black;
+    margin: 5px;
+    -webkit-filter: grayscale(0.5);
+            filter: grayscale(0.5);
+    -webkit-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out; }
+    #albumImages img:hover {
+      -webkit-filter: grayscale(0);
+              filter: grayscale(0);
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1);
+      -webkit-transition: all 300ms ease-in-out;
+              transition: all 300ms ease-in-out; }
+
 .letter {
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
