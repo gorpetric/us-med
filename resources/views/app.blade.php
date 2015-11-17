@@ -22,6 +22,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.js"></script>
 <script src="{{ asset('js/lightbox.min.js') }}"></script>
 <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+<script src="{{ asset('js/pace.min.js') }}"></script>
 @include('partials.swal')
 @yield('js')
 </body>
