@@ -1491,9 +1491,42 @@ header.home-header {
 footer {
   color: white;
   background-color: #262626;
-  padding: 40px 0px;
+  padding: 20px 0px;
   width: 100%;
-  margin-top: 40px; }
+  margin-top: 40px;
+  position: relative; }
+  footer .fb-find {
+    display: block;
+    margin: 0 auto 30px auto;
+    -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out; }
+    footer .fb-find:hover {
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1);
+      -webkit-transition: all 300ms ease-in-out;
+              transition: all 300ms ease-in-out; }
+  footer .usefull-links p {
+    margin: 10px 0; }
+  footer .usefull-links a {
+    color: cornflowerblue;
+    display: inline-block;
+    margin-bottom: 5px; }
+  footer .partners {
+    text-align: center; }
+    footer .partners .partner {
+      display: inline-block;
+      margin: 0 10px; }
+      footer .partners .partner a {
+        color: cornflowerblue; }
+      footer .partners .partner img {
+        max-width: 50px;
+        max-height: 50px; }
+  footer hr {
+    border-color: grey; }
 
 .home-logo {
   margin: 0 auto;
@@ -1675,8 +1708,8 @@ header.gallery-header {
   .social-media a {
     margin: 0 10px; }
     .social-media a img {
-      -webkit-filter: grayscale(0.9);
-              filter: grayscale(0.9);
+      -webkit-filter: grayscale(1);
+              filter: grayscale(1);
       -webkit-transition: all 300ms ease-in-out;
               transition: all 300ms ease-in-out; }
       .social-media a img:hover {
