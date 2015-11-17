@@ -5,7 +5,7 @@
 @section('content')
 <header class="gallery-header"></header>
 <div class="container">
-	<h3>Galerija</h3>
+	<h1>Galerija</h1><hr style='border-color:#262626'>
 	@if(Auth::check())
 		@if(Auth::user()->isAdmin())
 			<hr/>
@@ -28,13 +28,11 @@
 	@if(!$albums->count())
 		<p>Trenutno nema ni jednog albuma.</p>
 	@else
+		<div class="albums-container">
 		@foreach($albums as $album)
-			<p>
-				<a href="{{ route('gallery.album', ['id' => $album->id]) }}">{{ $album->title }}</a>
-				- {{ $album->user->username }}
-				- {{ $album->created_at->diffForHumans() }}
-			</p>
+			@include('gallery/_albums')
 		@endforeach
+		</div>
 	@endif
 </div>
 @stop

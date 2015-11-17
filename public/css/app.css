@@ -1641,6 +1641,48 @@ header.gallery-header {
       -webkit-transition: all 300ms ease-in-out;
               transition: all 300ms ease-in-out; }
 
+.albums-container {
+  text-align: center; }
+  .albums-container .each-album {
+    position: relative;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 5px;
+    width: 200px;
+    height: 200px;
+    font-size: 0;
+    overflow: hidden; }
+    .albums-container .each-album img {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+      width: 50%; }
+  .albums-container .info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    -webkit-transform: translate(0%, 100%) scale(0.5);
+        -ms-transform: translate(0%, 100%) scale(0.5);
+            transform: translate(0%, 100%) scale(0.5);
+    -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
+    opacity: 0; }
+  .albums-container .album-link {
+    text-decoration: none;
+    display: inline-block; }
+  .albums-container .each-album:hover .info {
+    opacity: 1;
+    -webkit-transform: translate(0%, 0%) scale(1);
+        -ms-transform: translate(0%, 0%) scale(1);
+            transform: translate(0%, 0%) scale(1);
+    -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out; }
+
 .letter {
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);

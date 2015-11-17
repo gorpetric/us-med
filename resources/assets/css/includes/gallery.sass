@@ -24,3 +24,44 @@ header.gallery-header
 			filter: grayscale(0)
 			transform: scale(1)
 			transition: all 300ms ease-in-out
+
+.albums-container
+	text-align: center
+
+	.each-album
+		position: relative
+		border: 1px solid black
+		display: inline-block
+		margin: 5px
+		width: 200px
+		height: 200px
+		font-size: 0
+		overflow: hidden
+
+		img
+			border: 1px solid black
+			width: 100px
+			height: 100px
+			width: 50%
+
+	.info
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		color: white
+		background: fade-out(black, 0.2)
+		padding: 10px
+		transform: translate(0%, 100%) scale(0.5)
+		transition: all 300ms ease-in-out
+		opacity: 0
+
+	.album-link
+		text-decoration: none
+		display: inline-block
+
+	.each-album:hover .info
+		opacity: 1
+		transform: translate(0%, 0%) scale(1)
+		transition: all 300ms ease-in-out

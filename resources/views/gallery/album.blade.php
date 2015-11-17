@@ -17,7 +17,7 @@
 </div>
 <div class="container-fluid">
 	@if(!$album->images()->count())
-		<p>Album prazan</p>
+		<p style='text-align:center'>Album prazan</p>
 	@endif
 	<div class="row">
 		<div class="col-md-12">
