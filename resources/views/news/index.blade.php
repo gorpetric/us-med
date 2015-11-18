@@ -3,9 +3,9 @@
 @section('title'){{'Vijesti'}}@stop
 
 @section('content')
-<header class="news-header"></header>
+<!-- <header class="news-header"></header> -->
 <div class="container">
-	<h3>Vijesti</h3><hr/>
+	<h1>Vijesti</h1><hr style='border-color:#262626'>
 	@if(Auth::check())
 		@if(Auth::user()->isAdmin())
 			<a href="{{ route('news.new') }}"><button class="btn btn-default">Nova vijest</button></a>

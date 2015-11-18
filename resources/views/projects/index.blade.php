@@ -3,9 +3,9 @@
 @section('title'){{'Projekti'}}@stop
 
 @section('content')
-<header class="projects-header"></header>
+<!-- <header class="projects-header"></header> -->
 <div class="container">
-	<h3>Projekti</h3><hr/>
+	<h1>Projekti</h1><hr style='border-color:#262626'>
 	@if(Auth::check())
 		@if(Auth::user()->isAdmin())
 			<a href="{{ route('projects.new') }}"><button class="btn btn-default">Novi projekt</button></a>

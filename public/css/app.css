@@ -1558,19 +1558,33 @@ footer {
   margin-top: 40px;
   margin-bottom: 40px; }
 
-.home-projects .panel {
+.home-projects .nav-tabs {
+  border: 1px solid #ddd;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.55); }
-  .home-projects .panel .panel-body img {
-    margin: auto;
-    margin-bottom: 10px;
-    width: 100%;
-    max-width: 300px;
-    height: 150px; }
-  .home-projects .panel .panel-body button {
+  .home-projects .nav-tabs li.active a {
+    background-color: #ddd;
+    border-bottom-color: #ddd; }
+    .home-projects .nav-tabs li.active a:hover, .home-projects .nav-tabs li.active a:active, .home-projects .nav-tabs li.active a:focus {
+      border-bottom-color: #ddd; }
+
+.home-projects .tab-content .tab-pane {
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.55); }
+  .home-projects .tab-content .tab-pane img {
+    max-height: 300px;
+    margin: 0 auto; }
+  .home-projects .tab-content .tab-pane p {
+    text-align: justify; }
+  .home-projects .tab-content .tab-pane button {
     display: block;
     margin: 0 auto; }
-  .home-projects .panel .panel-body a {
+  .home-projects .tab-content .tab-pane a {
     text-decoration: none; }
+  .home-projects .tab-content .tab-pane h4 {
+    text-align: center; }
 
 .vijest .vijest-banner {
   margin: 20px auto;

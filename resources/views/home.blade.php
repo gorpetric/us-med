@@ -27,25 +27,7 @@
 		@if(!$news->count())
 		<p class="help-block" style="text-align:center">Trenutno nema ni jedne vijesti.</p>
 		@else
-			<div class="row">
-			@foreach($news as $story)
-				<div class="col-sm-6 col-md-3">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<div class="panel-title">
-								{{ $story->title }}
-							</div>
-						</div>
-						<div class="panel-body">
-							<a href="{{ route('news.story', ['slug'=>$story->slug]) }}"><img class='img-responsive img-rounded' src="{{ asset('img/news/' . $story->image) }}"></a>
-							<p>{{ stripMarkdown(str_limit($story->body, 200)) }}</p>
-							<a href="{{ route('news.story', ['slug'=>$story->slug]) }}"><button class='btn btn-default'>Pročitaj vijest</button></a>
-						</div>
-					</div>
-				</div>
-			@endforeach
-			</div>
-			<p style='text-align:right'><a href="{{ route('news.index') }}">Starije vijesti</a></p>
+			@include('partials/_home-news')
 		@endif
 	</div> <!-- end home-news -->
 	<div class="home-projects">
@@ -53,23 +35,7 @@
 		@if(!$projects->count())
 			<p class="help-block" style="text-align:center">Trenutno nema ni jednog projekta.</p>
 		@else
-			<div class="row">
-			@foreach($projects as $project)
-				<div class="col-sm-6 col-md-3">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<div class="panel-title">{{ $project->title }}</div>
-						</div>
-						<div class="panel-body">
-							<a href="{{ route('projects.project', ['slug'=>$project->slug]) }}"><img class='img-responsive img-rounded' src="{{ asset('img/projects/' . $project->image) }}"></a>
-							<p>{{ stripMarkdown(str_limit($project->body, 200)) }}</p>
-							<a href="{{ route('projects.project', ['slug'=>$project->slug]) }}"><button class='btn btn-default'>Više o projektu</button></a>
-						</div>
-					</div>
-				</div>
-			@endforeach
-			</div>
-			<p style='text-align:right'><a href="{{ route('projects.index') }}">Svi projekti</a></p>
+			@include('partials/_home-projects')
 		@endif
 	</div><!-- end home-projects -->
 </div>
