@@ -12,6 +12,9 @@
 				<p>{{ stripMarkdown(str_limit($story->body, 200)) }}</p>
 				<a href="{{ route('news.story', ['slug'=>$story->slug]) }}"><button class='btn btn-default'>Pročitaj vijest</button></a>
 			</div>
+			<div class="panel-footer">
+				{{ $story->created_at->format('d.m.Y. H:i') }}
+			</div>
 		</div>
 	</div>
 @endforeach
