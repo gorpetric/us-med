@@ -1588,7 +1588,6 @@ footer {
 
 .vijest .vijest-banner {
   margin: 20px auto;
-  max-height: 40vh;
   max-width: 100%; }
 
 .vijest .vijest-body {
@@ -1597,6 +1596,38 @@ footer {
   padding: 20px 0;
   max-width: 100%;
   z-index: 1; }
+
+.vijesti .prva {
+  margin-bottom: 20px; }
+
+.vijesti .ostale .ostala {
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+  display: inline-block;
+  border: 1px solid #262626;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  margin: 20px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  -webkit-transition: all 300ms ease-in-out;
+          transition: all 300ms ease-in-out; }
+  .vijesti .ostale .ostala:hover {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+    -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out; }
+    .vijesti .ostale .ostala:hover p {
+      color: red; }
+
+.vijesti .ostale img {
+  margin: 15px auto;
+  width: 200px;
+  height: 150px; }
 
 header.news-header {
   background-image: url("../img/news.jpg");

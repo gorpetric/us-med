@@ -3,7 +3,7 @@
 
 	.vijest-banner
 		margin: 20px auto
-		max-height: 40vh
+		//max-height: 40vh
 		max-width: 100%
 
 	.vijest-body
@@ -12,6 +12,36 @@
 		padding: 20px 0
 		max-width: 100%
 		z-index: 1
+
+.vijesti
+	.prva
+		margin-bottom: 20px
+
+	.ostale
+		.ostala
+			cursor: zoom-in
+			display: inline-block
+			border: 1px solid #262626
+			text-decoration: none
+			text-align: center
+			color: black
+			margin: 20px
+			padding: 10px
+			background-color: white
+			box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5)
+			filter: grayscale(1)
+			transition: all 300ms ease-in-out
+
+			&:hover
+				filter: grayscale(0)
+				transition: all 300ms ease-in-out
+
+				p
+					color: red
+		img
+			margin: 15px auto
+			width: 200px
+			height: 150px
 
 header.news-header
 	background:
