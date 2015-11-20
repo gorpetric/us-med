@@ -1586,9 +1586,28 @@ footer {
   .home-projects .tab-content .tab-pane h4 {
     text-align: center; }
 
-.vijest .vijest-banner {
+.vijest .vj .vijest-banner {
+  position: relative;
+  display: inline-block;
   margin: 20px auto;
-  max-width: 100%; }
+  max-width: 60%; }
+  @media (max-width: 768px) {
+    .vijest .vj .vijest-banner {
+      max-width: 100%;
+      margin-bottom: 0; } }
+  .vijest .vj .vijest-banner img {
+    max-height: 400px; }
+
+.vijest .vj .vijest-info {
+  position: absolute;
+  display: inline-block;
+  padding: 20px;
+  max-width: 40%; }
+  @media (max-width: 768px) {
+    .vijest .vj .vijest-info {
+      position: relative;
+      padding-top: 0;
+      max-width: 100%; } }
 
 .vijest .vijest-body {
   background-color: #c2c2c2;
@@ -1599,6 +1618,8 @@ footer {
 
 .vijesti .prva {
   margin-bottom: 20px; }
+  .vijesti .prva img {
+    max-height: 400px; }
 
 .vijesti .ostale .ostala {
   cursor: -webkit-zoom-in;

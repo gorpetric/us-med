@@ -1,10 +1,32 @@
 .vijest
 	//margin-top: 70px
 
-	.vijest-banner
-		margin: 20px auto
-		//max-height: 40vh
-		max-width: 100%
+	.vj
+
+		.vijest-banner
+			position: relative
+			display: inline-block
+			margin: 20px auto
+			max-width: 60%
+
+			@media(max-width:768px)
+				max-width: 100%
+				margin-bottom: 0
+
+			img
+				max-height: 400px
+
+		.vijest-info
+			position: absolute
+			display: inline-block
+			//background-color: pink
+			padding: 20px
+			max-width: 40%
+
+			@media(max-width:768px)
+				position: relative
+				padding-top: 0
+				max-width: 100%
 
 	.vijest-body
 		background-color: #c2c2c2
@@ -16,6 +38,9 @@
 .vijesti
 	.prva
 		margin-bottom: 20px
+
+		img
+			max-height: 400px
 
 	.ostale
 		.ostala
