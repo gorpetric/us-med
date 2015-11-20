@@ -1669,6 +1669,44 @@ header.news-header {
   max-width: 100%;
   z-index: 1; }
 
+.projekti .svaki {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #262626;
+  padding-bottom: 20px;
+  margin-bottom: 20px; }
+  .projekti .svaki:last-child {
+    border: 0;
+    margin-bottom: 0;
+    padding: 0; }
+  @media (max-width: 768px) {
+    .projekti .svaki {
+      display: block; } }
+  .projekti .svaki .info-first {
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+        -ms-flex-order: -1;
+            order: -1; }
+  .projekti .svaki .slika img {
+    max-height: 500px; }
+  .projekti .svaki .projekt-info {
+    padding: 20px; }
+
 header.projects-header {
   background-image: url("../img/projects.jpg");
   background-size: cover;
