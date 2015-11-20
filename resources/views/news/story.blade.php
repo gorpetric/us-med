@@ -16,7 +16,7 @@
 				<p>
 				<a href="{{ route('news.edit', ['slug' => $story->slug]) }}">Uredi vijest</a>
 				<span class='glyphicon glyphicon-minus'></span>
-				<a href="{{ route('news.edit', ['slug' => $story->slug]) }}">Obriši vijest</a>
+				<a class='delete-link' href="{{ route('news.delete', ['slug' => $story->slug]) }}">Obriši vijest</a>
 				</p>
 			@endif
 		@endif
@@ -30,4 +30,26 @@
 	</div>
 </div>
 </div>
+@stop
+
+@section('js')
+<script type='text/javascript'>
+$('.delete-link').click(function(e){
+	var that = $(this);
+	e.preventDefault();
+	swal({
+		title: "Sigurno?",
+		text: "Vijest i svi podaci o njoj će biti izgubljeni!",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: "#DD6B55",
+		confirmButtonText: "Da, obriši vijest!",
+		//closeOnConfirm: false
+	},
+		function(){
+			location.href=that.attr('href');
+		}
+	);
+});
+</script>
 @stop

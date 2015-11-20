@@ -12,7 +12,7 @@
 			<p style='text-align:center'>
 			<a href="{{ route('projects.edit', ['slug' => $project->slug]) }}">Uredi projekt</a>
 			<span class='glyphicon glyphicon-minus'></span>
-			<a href="{{ route('projects.edit', ['slug' => $project->slug]) }}">Obriši projekt</a>
+			<a class='delete-link' href="{{ route('projects.delete', ['slug' => $project->slug]) }}">Obriši projekt</a>
 			</p>
 		@endif
 	@endif
@@ -25,4 +25,26 @@
 	</div>
 </div>
 </div>
+@stop
+
+@section('js')
+<script type='text/javascript'>
+$('.delete-link').click(function(e){
+	var that = $(this);
+	e.preventDefault();
+	swal({
+		title: "Sigurno?",
+		text: "Projekt i svi podaci o njemu će biti izgubljeni!",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: "#DD6B55",
+		confirmButtonText: "Da, obriši projekt!",
+		//closeOnConfirm: false
+	},
+		function(){
+			location.href=that.attr('href');
+		}
+	);
+});
+</script>
 @stop

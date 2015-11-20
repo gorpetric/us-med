@@ -65,6 +65,11 @@ Route::post('/vijest/{slug}/uredi', [
 	'as' => 'news.edit',
 	'middleware' => ['auth'],
 ]);
+Route::get('/vijest/{slug}/delete', [
+	'uses' => '\App\Http\Controllers\NewsController@getDelete',
+	'as' => 'news.delete',
+	'middleware' => ['auth'],
+]);
 
 /*
 * Projects
@@ -95,6 +100,11 @@ Route::get('/projekt/{slug}/uredi', [
 Route::post('/projekt/{slug}/uredi', [
 	'uses' => '\App\Http\Controllers\ProjectsController@postEdit',
 	'as' => 'projects.edit',
+	'middleware' => ['auth'],
+]);
+Route::get('/projekt/{slug}/delete', [
+	'uses' => '\App\Http\Controllers\ProjectsController@getDelete',
+	'as' => 'projects.delete',
 	'middleware' => ['auth'],
 ]);
 

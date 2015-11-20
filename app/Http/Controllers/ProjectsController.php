@@ -108,4 +108,21 @@ class ProjectsController extends Controller
         ]);
         return redirect()->back();
     }
+
+    public function getDelete($slug)
+    {
+        $currentProject = Project::where('slug', $slug)->first();
+        if(!$currentProject || !Auth::user()->isAdmin()){
+            return redirect()->route('home');
+        }
+
+        unlink(public_path('img/projects/' . $currentProject->image));
+        $currentProject->delete();
+
+        notify()->flash('Projekt uspješno obrisan', 'success', [
+            'timer' => 2000,
+            'noConfirm' => true,
+        ]);
+        return redirect()->route('projects.index');
+    }
 }

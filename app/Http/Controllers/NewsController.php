@@ -110,4 +110,21 @@ class NewsController extends Controller
         ]);
         return redirect()->back();
     }
+
+    public function getDelete($slug)
+    {
+        $currentStory = News::where('slug', $slug)->first();
+        if(!$currentStory || !Auth::user()->isStoryAuthor($currentStory)){
+            return redirect()->route('home');
+        }
+
+        unlink(public_path('img/news/' . $currentStory->image));
+        $currentStory->delete();
+
+        notify()->flash('Vijest uspješno obrisana', 'success', [
+            'timer' => 2000,
+            'noConfirm' => true,
+        ]);
+        return redirect()->route('news.index');
+    }
 }
