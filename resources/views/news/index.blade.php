@@ -3,47 +3,50 @@
 @section('title'){{'Vijesti'}}@stop
 
 @section('content')
-<!-- <header class="news-header"></header> -->
-<div class="container">
-	<h1>Vijesti</h1><hr style='border-color:#262626'>
-	@if(Auth::check())
-		@if(Auth::user()->isAdmin())
-			<a href="{{ route('news.new') }}"><button class="btn btn-default">Nova vijest</button></a>
-			<hr/>
-		@endif
-	@endif
-	@if(!$news->count())
-		<p>Trenutno nema ni jedne vijesti.</p>
-	@else
-		<div class="vijesti">
-			<div class="prva">
-				<div class="row">
-					<div class="col-sm-6">
-						<img class='img-responsive img-rounded' src="{{ asset('img/news/' . $news[0]->image) }}">
-					</div>
-					<div class="col-sm-6">
-						<h3>
-							<small>{{ $news[0]->created_at->format('d.m.Y. H:i') }}</small><br/>
-							<a href="{{ route('news.story', ['slug' => $news[0]->slug]) }}">{{ $news[0]->title }}</a>
-						</h3>
-						<p>{{ stripMarkdown(str_limit($news[0]->body, 300)) }}</p>
-						<a class='btn btn-default' href="{{ route('news.story', ['slug' => $news[0]->slug]) }}">Pročitaj vijest</a>
-					</div>
-				</div>
+<header class="news-header">
+	<div class="container">
+		<div class="flex-container">
+			<div class='title'>
+				<a href="{{ route('news.index') }}"><h1><span class="glyphicon glyphicon-list-alt"></span> Vijesti</h1></a>
+				<p class="help-block">Najnovije vijesti vezane uz Udrugu i ostalo</p>
 			</div>
-			<div class="ostale">
-				@if($news->count() >= 1)
-				<hr style='border-color:#262626'>
-				@for ($i=1; $i < $news->count(); $i++)
-					<a class='ostala' href="{{ route('news.story', ['slug' => $news[$i]->slug]) }}">
-						<h4>{{ $news[$i]->title }}</h4>
-						<img class='img-responsive img-rounded' src="{{ asset('img/news/' . $news[$i]->image) }}">
-						<p>{{ $news[$i]->created_at->format('d.m.Y. H:i') }}</p>
-					</a>
-				@endfor
+			<div class='links'>
+				@if(Auth::check())
+					@if(Auth::user()->isAdmin())
+						<a class='btn btn-default' href="{{ route('news.new') }}">Nova vijest</a>
+					@endif
 				@endif
 			</div>
 		</div>
-	@endif
-</div>
+	</div>
+</header>
+@if(!$news->count())
+	<p class='text-center'>Trenutno nema ni jedne vijesti.</p>
+@else
+	<div class="vijesti">
+		<div class="prva">
+			<div class="container">
+				<img class='img-responsive img-rounded' src="{{ asset('img/news/' . $news[0]->image) }}">
+				<a href="{{ route('news.story', ['slug' => $news[0]->slug]) }}"><h3>{{ $news[0]->title }}</h3></a>
+				<p class="help-block"><span class="glyphicon glyphicon-dashboard"></span> {{ $news[0]->created_at->format('d.m.Y. H:i') }}</p>
+				<a class='btn btn-info' href="{{ route('news.story', ['slug' => $news[0]->slug]) }}">Pročitaj vijest</a>
+			</div>
+		</div>
+		@if($news->count() >= 2)
+		<div class="container ostale">
+			@for($i=1; $i < $news->count(); $i++)
+				<div class="row svaka">
+					<div class="col-lg-6 col-lg-offset-2 col-md-8 col-md-offset-1 col-sm-10">
+						<a href="{{ route('news.story', ['slug' => $news[$i]->slug]) }}"><h4>{{ $news[$i]->title }}</h4></a>
+						<p class="help-block"><span class="glyphicon glyphicon-dashboard"></span> {{ $news[$i]->created_at->format('d.m.Y. H:i') }}</p>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2">
+						<a class='btn btn-info' href="{{ route('news.story', ['slug' => $news[$i]->slug]) }}">Pročitaj vijest</a>
+					</div>
+				</div>
+			@endfor
+		</div>
+		@endif
+	</div>
+@endif
 @stop

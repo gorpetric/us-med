@@ -1586,76 +1586,57 @@ footer {
   .home-projects .tab-content .tab-pane h4 {
     text-align: center; }
 
-.vijest .vj .vijest-banner {
-  position: relative;
-  display: inline-block;
-  margin: 20px auto;
-  max-width: 60%; }
-  @media (max-width: 768px) {
-    .vijest .vj .vijest-banner {
-      max-width: 100%;
-      margin-bottom: 0; } }
-  .vijest .vj .vijest-banner img {
-    max-height: 400px; }
-
-.vijest .vj .vijest-info {
-  position: absolute;
-  display: inline-block;
-  padding: 20px;
-  max-width: 40%; }
-  @media (max-width: 768px) {
-    .vijest .vj .vijest-info {
-      position: relative;
-      padding-top: 0;
-      max-width: 100%; } }
+.vijest img {
+  max-height: 50vh;
+  margin: 20px auto 0 auto; }
 
 .vijest .vijest-body {
-  background-color: #c2c2c2;
   margin: 20px 0;
   padding: 20px 0;
   max-width: 100%;
   z-index: 1; }
 
 .vijesti .prva {
-  margin-bottom: 20px; }
+  background: #e6e6e6;
+  margin-bottom: 40px;
+  padding: 20px;
+  text-align: center; }
+  .vijesti .prva a {
+    text-decoration: none; }
   .vijesti .prva img {
-    max-height: 400px; }
+    max-height: 400px;
+    margin: 0 auto; }
 
-.vijesti .ostale .ostala {
-  cursor: -webkit-zoom-in;
-  cursor: zoom-in;
-  display: inline-block;
-  border: 1px solid #262626;
-  text-decoration: none;
-  text-align: center;
-  color: black;
-  margin: 20px;
-  padding: 10px;
-  background-color: white;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
-  -webkit-transition: all 300ms ease-in-out;
-          transition: all 300ms ease-in-out; }
-  .vijesti .ostale .ostala:hover {
-    -webkit-filter: grayscale(0);
-            filter: grayscale(0);
-    -webkit-transition: all 300ms ease-in-out;
-            transition: all 300ms ease-in-out; }
-    .vijesti .ostale .ostala:hover p {
-      color: red; }
+.vijesti .ostale a {
+  text-decoration: none; }
 
-.vijesti .ostale img {
-  margin: 15px auto;
-  width: 200px;
-  height: 150px; }
+.vijesti .ostale .svaka {
+  margin-bottom: 10px; }
 
 header.news-header {
-  background-image: url("../img/news.jpg");
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  background-color: white;
   background-attachment: fixed;
-  height: 30vh; }
+  padding: 40px 20px; }
+  header.news-header a {
+    text-decoration: none;
+    color: black; }
+  header.news-header .flex-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
 
 .projekt .projekt-banner {
   margin: 20px auto;
