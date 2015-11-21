@@ -3,27 +3,36 @@
 @section('title'){{ $project->title }}@stop
 
 @section('content')
-<div class="projekt">
-<div class="container">
-	<img class="img-responsive img-rounded projekt-banner" src="{{ asset('img/projects/' . $project->image) }}">
-	<h2 style='text-align:center'><small>Projekt</small><br/>{{ $project->title }}</h2>
-	@if(Auth::check())
-		@if(Auth::user()->isAdmin())
-			<p style='text-align:center'>
-			<a href="{{ route('projects.edit', ['slug' => $project->slug]) }}">Uredi projekt</a>
-			<span class='glyphicon glyphicon-minus'></span>
-			<a class='delete-link' href="{{ route('projects.delete', ['slug' => $project->slug]) }}">Obriši projekt</a>
-			</p>
-		@endif
-	@endif
-</div>
-<div class="projekt-body">
+<header class="projects-header">
 	<div class="container">
-		<div class="letter">
-			{!! Markdown::setMarkupEscaped(true)->parse($project->body) !!}
+		<div class="flex-container">
+			<div class='title'>
+				<a href="{{ route('projects.index') }}"><h1><span class="glyphicon glyphicon-education"></span> Projekti</h1></a>
+			</div>
+			<div class='links'>
+				@if(Auth::check())
+					@if(Auth::user()->isAdmin())
+						<a class='btn btn-default' href="{{ route('projects.edit', ['slug' => $project->slug]) }}">Uredi projekt</a>
+						<a class='btn btn-warning delete-link' href="{{ route('projects.delete', ['slug' => $project->slug]) }}">Obriši projekt</a>
+					@endif
+				@endif
+			</div>
+		</div>
+		<hr>
+		<h3>{{ $project->title }}</h3>
+		<p class="help-block"><span class="glyphicon glyphicon-dashboard"></span> {{ $project->created_at->format('d.m.Y. H:i') }}</p>
+		<p>{{ $project->user->getFullName() }}</p>
+	</div>
+</header>
+<div class="projekt">
+	<img class="img-responsive img-rounded" src="{{ asset('img/projects/' . $project->image) }}">
+	<div class="projekt-body">
+		<div class="container">
+			<div class="letter">
+				{!! Markdown::setMarkupEscaped(true)->parse($project->body) !!}
+			</div>
 		</div>
 	</div>
-</div>
 </div>
 @stop
 

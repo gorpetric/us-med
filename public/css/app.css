@@ -1638,13 +1638,11 @@ header.news-header {
         -ms-flex-pack: justify;
             justify-content: space-between; }
 
-.projekt .projekt-banner {
-  margin: 20px auto;
-  max-height: 40vh;
-  max-width: 100%; }
+.projekt img {
+  max-height: 50vh;
+  margin: 20px auto 0 auto; }
 
 .projekt .projekt-body {
-  background-color: #c2c2c2;
   margin: 20px 0;
   padding: 20px 0;
   max-width: 100%;
@@ -1668,7 +1666,6 @@ header.news-header {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid #262626;
   padding-bottom: 20px;
   margin-bottom: 20px; }
   .projekti .svaki:last-child {
@@ -1689,11 +1686,30 @@ header.news-header {
     padding: 20px; }
 
 header.projects-header {
-  background-image: url("../img/projects.jpg");
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  background-color: white;
   background-attachment: fixed;
-  height: 30vh; }
+  padding: 40px 20px;
+  margin-bottom: 20px; }
+  header.projects-header a {
+    text-decoration: none;
+    color: black; }
+  header.projects-header .flex-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
 
 header.gallery-header {
   background-image: url("../img/gallery.jpg");

@@ -1,13 +1,11 @@
 .projekt
-	//margin-top: 70px
 
-	.projekt-banner
-		margin: 20px auto
-		max-height: 40vh
-		max-width: 100%
+	img
+		max-height: 50vh
+		margin: 20px auto 0 auto
 
 	.projekt-body
-		background-color: #c2c2c2
+		//background-color: #c2c2c2
 		margin: 20px 0
 		padding: 20px 0
 		max-width: 100%
@@ -19,7 +17,7 @@
 		flex-direction: row
 		justify-content: center
 		align-items: center
-		border-bottom: 1px solid #262626
+		//border-bottom: 1px solid #262626
 		padding-bottom: 20px
 		margin-bottom: 20px
 
@@ -42,9 +40,19 @@
 			padding: 20px
 
 header.projects-header
+	position: relative
 	background:
-		image: url('../img/projects.jpg')
-		size: cover
-		position: center
+		color: white
 		attachment: fixed
-	height: 30vh
+	padding: 40px 20px
+	margin-bottom: 20px
+
+	a
+		text-decoration: none
+		color: black
+
+	.flex-container
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: space-between

@@ -3,15 +3,24 @@
 @section('title'){{'Projekti'}}@stop
 
 @section('content')
-<!-- <header class="projects-header"></header> -->
+<header class="projects-header">
+	<div class="container">
+		<div class="flex-container">
+			<div class='title'>
+				<a href="{{ route('projects.index') }}"><h1><span class="glyphicon glyphicon-education"></span> Projekti</h1></a>
+				<p class="help-block">Sadašnji i budući projekti koje vodi Udruga</p>
+			</div>
+			<div class='links'>
+				@if(Auth::check())
+					@if(Auth::user()->isAdmin())
+						<a class='btn btn-default' href="{{ route('projects.new') }}">Novi projekt</a>
+					@endif
+				@endif
+			</div>
+		</div>
+	</div>
+</header>
 <div class="container">
-	<h1>Projekti</h1><hr style='border-color:#262626'>
-	@if(Auth::check())
-		@if(Auth::user()->isAdmin())
-			<a href="{{ route('projects.new') }}"><button class="btn btn-default">Novi projekt</button></a>
-			<hr/>
-		@endif
-	@endif
 	@if(!$projects->count())
 		<p>Trenutno nema nijednog projekta.</p>
 	@else
