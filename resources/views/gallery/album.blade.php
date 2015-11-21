@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="flex-container">
 			<div class='title'>
-				<a href="{{ route('gallery.index') }}"><h1><span class="glyphicon glyphicon-list-alt"></span> Galerija</h1></a>
+				<a href="{{ route('gallery.index') }}"><h1><span class="glyphicon glyphicon-camera"></span> Galerija</h1></a>
 			</div>
 			<div class='links'>
 				@if(Auth::check())
@@ -22,18 +22,18 @@
 		<p class="help-block"><span class="glyphicon glyphicon-dashboard"></span> {{ $album->created_at->format('d.m.Y. H:i') }}</p>
 	</div>
 </header>
-<div class="dz-bg">
-	<div class="container">
-		@if(Auth::check())
-			@if(Auth::user()->isAdmin())
+@if(Auth::check())
+	@if(Auth::user()->isAdmin())
+		<div class="dz-bg">
+			<div class="container">
 				<form class="dropzone" id="dropzoneForm" action="{{ route('gallery.insert', ['id'=>$album->id]) }}" method="POST" autocomplete="off" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ Session::token() }}">
 				</form>
 				<p class="help-block">Slike se automatski postavljaju na server nakon odabira</p>
-			@endif
-		@endif
-	</div>
-</div>
+			</div>
+		</div>
+	@endif
+@endif
 <div class="container-fluid">
 	@if(!$album->images()->count())
 		<p style='text-align:center'>Album prazan</p>
