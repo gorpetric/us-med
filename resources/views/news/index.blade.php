@@ -21,7 +21,7 @@
 	</div>
 </header>
 @if(!$news->count())
-	<p class='text-center'>Trenutno nema ni jedne vijesti.</p>
+	<p style='text-align:center'>Trenutno nema ni jedne vijesti.</p>
 @else
 	<div class="vijesti">
 		<div class="prva">

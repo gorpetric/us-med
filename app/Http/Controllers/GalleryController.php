@@ -63,4 +63,26 @@ class GalleryController extends Controller
 
     	return $image;
     }
+
+    public function getDelete($id)
+    {
+        $currentAlbum = Album::where('id', $id)->first();
+        if(!$currentAlbum || !Auth::user()->isAdmin()){
+            return redirect()->route('home');
+        }
+
+        $images = $currentAlbum->images;
+        foreach ($images as $image) {
+            unlink(public_path('img/gallery/' . $image->name));
+            unlink(public_path('img/gallery/thumbs/' . $image->name));
+            $image->delete();
+        }
+        $currentAlbum->delete();
+
+        notify()->flash('Album uspješno obrisan', 'success', [
+            'timer' => 2000,
+            'noConfirm' => true,
+        ]);
+        return redirect()->route('gallery.index');
+    }
 }

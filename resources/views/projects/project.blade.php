@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<hr>
-		<h3>{{ $project->title }}</h3>
+		<a href="{{ route('projects.project', ['slug' => $project->slug]) }}"><h3>{{ $project->title }}</h3></a>
 		<p class="help-block"><span class="glyphicon glyphicon-dashboard"></span> {{ $project->created_at->format('d.m.Y. H:i') }}</p>
 		<p>{{ $project->user->getFullName() }}</p>
 	</div>

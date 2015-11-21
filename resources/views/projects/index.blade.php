@@ -22,7 +22,7 @@
 </header>
 <div class="container">
 	@if(!$projects->count())
-		<p>Trenutno nema nijednog projekta.</p>
+		<p>Trenutno nema ni jednog projekta.</p>
 	@else
 		<div class="projekti">
 		@foreach ($projects as $key => $project)

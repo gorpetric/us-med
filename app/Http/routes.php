@@ -129,6 +129,11 @@ Route::post('/galerija/{id}/unos', [
 	'as' => 'gallery.insert',
 	'middleware' => ['auth'],
 ]);
+Route::get('/galerija/{id}/delete', [
+	'uses' => '\App\Http\Controllers\GalleryController@getDelete',
+	'as' => 'gallery.delete',
+	'middleware' => ['auth'],
+]);
 
 /*
 * Pages

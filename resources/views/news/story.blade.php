@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<hr>
-		<h3>{{ $story->title }}</h3>
+		<a href="{{ route('news.story', ['slug' => $story->slug]) }}"><h3>{{ $story->title }}</h3></a>
 		<p class="help-block"><span class="glyphicon glyphicon-dashboard"></span> {{ $story->created_at->format('d.m.Y. H:i') }}</p>
 		<p>{{ $story->user->getFullName() }}</p>
 	</div>
