@@ -38,4 +38,9 @@ class HomeController extends Controller
     {
     	return view('pages.kontakt');
     }
+
+    public function getPartners()
+    {
+        return view('pages.partners');
+    }
 }

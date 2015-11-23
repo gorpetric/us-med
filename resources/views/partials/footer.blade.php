@@ -33,6 +33,7 @@
 			<div class="partner"><a title="Međimurska županija" target='_blank' href="http://medjimurska-zupanija.hr/"><img class='img-responsive' src="{{ asset('img/partneri/med-zupanija.gif') }}" /></a></div>
 			<div class="partner"><a title="Grad Čakovec" target='_blank' href="http://www.cakovec.hr/"><img class='img-responsive' src="{{ asset('img/partneri/grad-cakovec.gif') }}" /></a></div>
 			<div class="partner"><a title="Hortus Croatiae" target='_blank' href="http://projekti.hgk.hr/projects/9206-hortus-croatiae-vrt-hrvatske"><img class='img-responsive' src="http://placehold.it/100x100" /></a></div>
+			<div class="partner"><a title="Mateo Simonovic Photography" target='_blank' href="https://www.facebook.com/MateoSimonovicPhotography"><img class='img-responsive' src="{{ asset('img/partneri/msphoto_logo_white.png') }}" /></a></div>
 		</div>
 	</div>
 </footer>

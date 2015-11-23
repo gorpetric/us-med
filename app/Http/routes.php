@@ -154,3 +154,7 @@ Route::get('/kontakt', [
 	'uses' => '\App\Http\Controllers\HomeController@getKontakt',
 	'as' => 'pages.kontakt'
 ]);
+Route::get('/partneri', [
+	'uses' => '\App\Http\Controllers\HomeController@getPartners',
+	'as' => 'pages.partners'
+]);
