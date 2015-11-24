@@ -21,10 +21,6 @@
 			<div class="col-sm-9">HR2423400091110513415</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-3">Mobitel:</div>
-			<div class="col-sm-9">098 195 0924</div>
-		</div>
-		<div class="row">
 			<div class="col-sm-3">E-mail:</div>
 			<div class="col-sm-9"><a href="mailto:udruga.studenata.medjimurja@gmail.com">udruga.studenata.medjimurja@gmail.com</a></div>
 		</div>

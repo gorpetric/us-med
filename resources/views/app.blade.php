@@ -14,7 +14,6 @@
 <div class="all-content">
 @include('partials.alerts')
 @yield('content')
-<!--<div class="long" style="height:1200px"></div>-->
 </div>
 @include('partials.footer')
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>

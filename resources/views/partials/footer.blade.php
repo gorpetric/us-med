@@ -26,14 +26,14 @@
 		</div>
 		<hr/>
 		<div class="partners">
-			<div class="partner"><a title="Općina Nedelišće" target='_blank' href="http://nedelisce.hr/"><img class='img-responsive' src="{{ asset('img/partneri/opcina_nedelisce.gif') }}" /></a></div>
-			<div class="partner"><a title="Međimurske vode" target='_blank' href="http://medjimurske-vode.hr/"><img class='img-responsive' src="{{ asset('img/partneri/med-vode.png') }}" /></a></div>
-			<div class="partner"><a title="Međimurje plin" target='_blank' href="http://www.medjimurje-plin.hr/"><img class='img-responsive' src="{{ asset('img/partneri/med-plin.png') }}" /></a></div>
-			<div class="partner"><a title="C-Lab" target='_blank' href="http://clab.hr/"><img class='img-responsive' src="{{ asset('img/partneri/clab.png') }}" /></a></div>
-			<div class="partner"><a title="Međimurska županija" target='_blank' href="http://medjimurska-zupanija.hr/"><img class='img-responsive' src="{{ asset('img/partneri/med-zupanija.gif') }}" /></a></div>
-			<div class="partner"><a title="Grad Čakovec" target='_blank' href="http://www.cakovec.hr/"><img class='img-responsive' src="{{ asset('img/partneri/grad-cakovec.gif') }}" /></a></div>
-			<div class="partner"><a title="Hortus Croatiae" target='_blank' href="http://projekti.hgk.hr/projects/9206-hortus-croatiae-vrt-hrvatske"><img class='img-responsive' src="http://placehold.it/100x100" /></a></div>
-			<div class="partner"><a title="Mateo Simonovic Photography" target='_blank' href="https://www.facebook.com/MateoSimonovicPhotography"><img class='img-responsive' src="{{ asset('img/partneri/msphoto_logo_white.png') }}" /></a></div>
+			<div class="partner sest"><a title="Općina Nedelišće" target='_blank' href="http://nedelisce.hr/"><img class='img-responsive' src="{{ asset('img/partneri/opcina_nedelisce.gif') }}" /></a></div>			
+			<div class="partner cet"><a title="Međimurje plin" target='_blank' href="http://www.medjimurje-plin.hr/"><img class='img-responsive' src="{{ asset('img/partneri/med-plin.png') }}" /></a></div>
+			<div class="partner dva"><a title="C-Lab" target='_blank' href="http://clab.hr/"><img class='img-responsive' src="{{ asset('img/partneri/clab.png') }}" /></a></div>
+			<div class="partner jen"><a title="Međimurska županija" target='_blank' href="http://medjimurska-zupanija.hr/"><img class='img-responsive' src="{{ asset('img/partneri/med-zupanija.gif') }}" /></a></div>
+			<div class="partner tri"><a title="Međimurske vode" target='_blank' href="http://medjimurske-vode.hr/"><img class='img-responsive' src="{{ asset('img/partneri/med-vode.png') }}" /></a></div>
+			<div class="partner pet"><a title="Grad Čakovec" target='_blank' href="http://www.cakovec.hr/"><img class='img-responsive' src="{{ asset('img/partneri/grad-cakovec.gif') }}" /></a></div>
+			<div class="partner sedam"><a title="Hortus Croatiae" target='_blank' href="http://projekti.hgk.hr/projects/9206-hortus-croatiae-vrt-hrvatske"><img class='img-responsive' src="http://placehold.it/100x100" /></a></div>
+			<div class="partner osam"><a title="Mateo Simonovic Photography" target='_blank' href="https://www.facebook.com/MateoSimonovicPhotography"><img class='img-responsive' src="{{ asset('img/partneri/msphoto_logo_white.png') }}" /></a></div>
 		</div>
 	</div>
 </footer>
