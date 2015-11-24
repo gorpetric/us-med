@@ -28,6 +28,9 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"><span class="caret"></span></a>
 					<ul class="dropdown-menu">
+						@if(Auth::user()->isAdmin())
+							<li><a href="{{ route('admin.index') }}">ADMIN</a></li>
+						@endif
 						<li><a href="{{ route('profile.index') }}">Moj račun</a></li>
 						<li><a href="{{ route('auth.logout') }}">Odjava</a></li>
 					</ul>

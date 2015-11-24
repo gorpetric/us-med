@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="flex-container">
 			<div class='title'>
-				<a href="{{ route('projects.index') }}"><h1><span class="glyphicon glyphicon-education"></span> Projekti</h1></a>
+				<h1><a href="{{ route('projects.index') }}"><span class="glyphicon glyphicon-education"></span> Projekti</a></h1>
 			</div>
 			<div class='links'>
 				@if(Auth::check())
@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<hr>
-		<a href="{{ route('projects.project', ['slug' => $project->slug]) }}"><h3>{{ $project->title }}</h3></a>
+		<h3><a href="{{ route('projects.project', ['slug' => $project->slug]) }}">{{ $project->title }}</a></h3>
 		<p class="help-block"><span class="glyphicon glyphicon-dashboard"></span> {{ $project->created_at->format('d.m.Y. H:i') }}</p>
 		<p>{{ $project->user->getFullName() }}</p>
 	</div>

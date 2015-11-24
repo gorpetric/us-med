@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="flex-container">
 			<div class='title'>
-				<a href="{{ route('profile.index') }}"><h1><span class="glyphicon glyphicon-user"></span> Račun</h1></a>
+				<h1><a href="{{ route('profile.index') }}"><span class="glyphicon glyphicon-user"></span> Račun</a></h1>
 			</div>
 			<div class='links'>
 				<a class='btn btn-default' href="{{ route('profile.edit') }}">Uredi račun</a>

@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="flex-container">
 			<div class='title'>
-				<a href="{{ route('news.index') }}"><h1><span class="glyphicon glyphicon-list-alt"></span> Vijesti</h1></a>
+				<h1><a href="{{ route('news.index') }}"><span class="glyphicon glyphicon-list-alt"></span> Vijesti</a></h1>
 				<p class="help-block">Najnovije vijesti vezane uz Udrugu i ostalo</p>
 			</div>
 			<div class='links'>

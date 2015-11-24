@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="flex-container">
 			<div class='title'>
-				<a href="{{ route('projects.index') }}"><h1><span class="glyphicon glyphicon-education"></span> Projekti</h1></a>
+				<h1><a href="{{ route('projects.index') }}"><span class="glyphicon glyphicon-education"></span> Projekti</a></h1>
 				<p class="help-block">Sadašnji i budući projekti koje vodi Udruga</p>
 			</div>
 			<div class='links'>

@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="flex-container">
 			<div class='title'>
-				<a href="{{ route('gallery.index') }}"><h1><span class="glyphicon glyphicon-camera"></span> Galerija</h1></a>
+				<h1><a href="{{ route('gallery.index') }}"><span class="glyphicon glyphicon-camera"></span> Galerija</a></h1>
 			</div>
 			<div class='links'>
 				@if(Auth::check())
@@ -18,7 +18,7 @@
 			</div>
 		</div>
 		<hr>
-		<a href="{{ route('gallery.album', ['id' => $album->id]) }}"><h3>{{ $album->title }}</h3></a>
+		<h3><a href="{{ route('gallery.album', ['id' => $album->id]) }}">{{ $album->title }}</a></h3>
 		<p class="help-block"><span class="glyphicon glyphicon-dashboard"></span> {{ $album->created_at->format('d.m.Y. H:i') }}</p>
 	</div>
 </header>

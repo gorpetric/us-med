@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="flex-container">
 			<div class='title'>
-				<a href="{{ route('gallery.index') }}"><h1><span class="glyphicon glyphicon-camera"></span> Galerija</h1></a>
+				<h1><a href="{{ route('gallery.index') }}"><span class="glyphicon glyphicon-camera"></span> Galerija</a></h1>
 				<p class="help-block">Albumi sa fotografijama</p>
 			</div>
 			<div class='links'>

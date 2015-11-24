@@ -187,3 +187,22 @@ Route::post('/racun/promjena-lozinke', [
 	'as' => 'profile.changepwd',
 	'middleware' => ['auth'],
 ]);
+
+/*
+* Admin
+*/
+Route::get('/admin', [
+	'uses' => '\App\Http\Controllers\AdminController@index',
+	'as' => 'admin.index',
+	'middleware' => ['auth'],
+]);
+Route::get('/admin/novi-clan', [
+	'uses' => '\App\Http\Controllers\AdminController@getNewMember',
+	'as' => 'admin.newmember',
+	'middleware' => ['auth'],
+]);
+Route::post('/admin/novi-clan', [
+	'uses' => '\App\Http\Controllers\AdminController@postNewMember',
+	'as' => 'admin.newmember',
+	'middleware' => ['auth'],
+]);
