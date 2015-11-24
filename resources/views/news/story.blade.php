@@ -11,7 +11,7 @@
 			</div>
 			<div class='links'>
 				@if(Auth::check())
-					@if(Auth::user()->isStoryAuthor($story))
+					@if(Auth::user()->isAdmin())
 						<a class='btn btn-default' href="{{ route('news.edit', ['slug' => $story->slug]) }}">Uredi vijest</a>
 						<a class='btn btn-warning delete-link' href="{{ route('news.delete', ['slug' => $story->slug]) }}">Obriši vijest</a>
 					@endif

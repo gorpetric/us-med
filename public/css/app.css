@@ -2022,6 +2022,32 @@ header.gallery-header {
     .partneri .partner h4 {
       margin: 10px 0; }
 
+header.profile {
+  position: relative;
+  background-color: white;
+  background-attachment: fixed;
+  padding: 40px 20px;
+  margin-bottom: 20px; }
+  header.profile a {
+    text-decoration: none;
+    color: black; }
+  header.profile .flex-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;

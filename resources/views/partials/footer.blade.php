@@ -2,21 +2,22 @@
 	<div class="container">
 		<a title='Find us on Facebook' target='_blank' href="https://www.facebook.com/UdrugaStudenataMedjimurja"><img class='fb-find' src="{{ asset('img/social-media-icons/fb-find.png') }}" /></a>
 		<div class="row">
-			<div class='col-sm-5 col-lg-3 col-lg-offset-2 col-md-4 col-md-offset-1'>
+			<div class='col-sm-3 col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-1'>
+				<p>Korisni linkovi</p>
+				<a target='_blank' href="http://www.zet.hr">ZET</a><br/>
+				<a target='_blank' href="http://esava.info/">e-Sava</a><br/>
+				<a target='_blank' href="https://www.duolingo.com">Duolingo</a><br/>
+				<a target='_blank' href="https://pretinac.gov.hr/KorisnickiPretinac/eGradani.html">e-Građani</a><br/>
+				<a target='_blank' href="http://toastmasters.hr/">Toastmasters</a><br/>
+				<a target='_blank' href="http://www.sczg.unizg.hr/">Studentski Centar</a><br/>
+			</div>
+			<div class='col-sm-5 col-lg-3 col-md-4'>
 				<p>Studentske grupe</p>
 				<a target='_blank' href="https://www.facebook.com/groups/219249268169861/">Ekipa s Cvjetnog</a><br/>
 				<a target='_blank' href="https://www.facebook.com/groups/7584929309/">Studentski dom Lašćina</a><br/>
 				<a target='_blank' href="https://www.facebook.com/groups/267580743281222">Udruga studenata Međimurja</a><br/>
 				<a target='_blank' href="https://www.facebook.com/groups/267580743281222">Studentski dom "Stjepan Radić"</a><br/>
 				<a target='_blank' href="https://www.facebook.com/groups/S.D.Shara/">Studentski dom Ante Starčević - Šara</a><br/>
-			</div>
-			<div class='col-sm-3 col-lg-2 col-md-2'>
-				<p>Korisni linkovi</p>
-				<a target='_blank' href="http://www.zet.hr">ZET</a><br/>
-				<a target='_blank' href="http://esava.info/">e-Sava</a><br/>
-				<a target='_blank' href="https://pretinac.gov.hr/KorisnickiPretinac/eGradani.html">e-Građani</a><br/>
-				<a target='_blank' href="http://toastmasters.hr/">Toastmasters</a><br/>
-				<a target='_blank' href="http://www.sczg.unizg.hr/">Studentski Centar</a><br/>
 			</div>
 			<div class='col-sm-4 col-lg-3 col-md-3'>
 				<p>Korisne grupe</p>

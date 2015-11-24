@@ -26,13 +26,14 @@
 				<li><a href="{{ route('pages.kontakt') }}">Kontakt</a></li>
 				@if(Auth::check())
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->getName() }} <span class="caret"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"><span class="caret"></span></a>
 					<ul class="dropdown-menu">
+						<li><a href="{{ route('profile.index') }}">Moj račun</a></li>
 						<li><a href="{{ route('auth.logout') }}">Odjava</a></li>
 					</ul>
 				</li>
 				@else
-				<li><a href="{{ route('auth.login') }}">Prijava</a></li>
+				<li><a href="{{ route('auth.login') }}"><span class="glyphicon glyphicon-user"></span></a></li>
 				@endif
 			</ul>		
 		</div> <!-- collapse -->

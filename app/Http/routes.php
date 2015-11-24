@@ -158,3 +158,32 @@ Route::get('/partneri', [
 	'uses' => '\App\Http\Controllers\HomeController@getPartners',
 	'as' => 'pages.partners'
 ]);
+
+/*
+* Profile
+*/
+Route::get('/racun', [
+	'uses' => '\App\Http\Controllers\ProfileController@index',
+	'as' => 'profile.index',
+	'middleware' => ['auth'],
+]);
+Route::get('/racun/uredi', [
+	'uses' => '\App\Http\Controllers\ProfileController@getEdit',
+	'as' => 'profile.edit',
+	'middleware' => ['auth'],
+]);
+Route::post('/racun/uredi', [
+	'uses' => '\App\Http\Controllers\ProfileController@postEdit',
+	'as' => 'profile.edit',
+	'middleware' => ['auth'],
+]);
+Route::get('/racun/promjena-lozinke', [
+	'uses' => '\App\Http\Controllers\ProfileController@getChangepwd',
+	'as' => 'profile.changepwd',
+	'middleware' => ['auth'],
+]);
+Route::post('/racun/promjena-lozinke', [
+	'uses' => '\App\Http\Controllers\ProfileController@postChangepwd',
+	'as' => 'profile.changepwd',
+	'middleware' => ['auth'],
+]);

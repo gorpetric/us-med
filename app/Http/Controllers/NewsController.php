@@ -80,7 +80,7 @@ class NewsController extends Controller
             return redirect()->route('home');
         }
 
-        if(Auth::user()->id !== $story->user_id){
+        if(!Auth::user()->isAdmin()){
             return redirect()->route('home');
         }
 
@@ -99,7 +99,7 @@ class NewsController extends Controller
             'body' => 'required',
         ]);
 
-        Auth::user()->news()->where('id', $story->id)->update([
+        News::where('id', $story->id)->update([
             'title' => $request->input('title'),
             'body' => $request->input('body'),
         ]);
@@ -114,7 +114,7 @@ class NewsController extends Controller
     public function getDelete($slug)
     {
         $currentStory = News::where('slug', $slug)->first();
-        if(!$currentStory || !Auth::user()->isStoryAuthor($currentStory)){
+        if(!$currentStory || !Auth::user()->isAdmin()){
             return redirect()->route('home');
         }
 

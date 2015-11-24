@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container login-page">
-	<h3>Prijava</h3>
+	<h1>Prijava</h1><hr style='border-color:#262626' />
 	<form action="{{ route('auth.login') }}" method="POST" class="form-inline" autocomplete="off">
 		<div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
 			<label for="username">Korisničko ime:</label>
