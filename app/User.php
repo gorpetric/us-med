@@ -22,6 +22,12 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $table = 'users';
 
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'birthday',
+    ];
+
     /**
      * The attributes that are mass assignable.
      *

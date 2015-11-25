@@ -206,8 +206,18 @@ Route::post('/admin/novi-clan', [
 	'as' => 'admin.newmember',
 	'middleware' => ['auth'],
 ]);
-Route::get('/admin/clanovi', [
+Route::get('/admin/clanovi/{order?}', [
 	'uses' => '\App\Http\Controllers\AdminController@getMembers',
 	'as' => 'admin.members',
+	'middleware' => ['auth'],
+]);
+Route::get('/admin/deletemember/{id}', [
+	'uses' => '\App\Http\Controllers\AdminController@getDeleteMember',
+	'as' => 'admin.deletemember',
+	'middleware' => ['auth'],
+]);
+Route::get('/admin/changeactive/{id}', [
+	'uses' => '\App\Http\Controllers\AdminController@getChangeActive',
+	'as' => 'admin.changeactive',
 	'middleware' => ['auth'],
 ]);
