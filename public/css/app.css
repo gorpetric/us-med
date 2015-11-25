@@ -2048,6 +2048,12 @@ header.profile {
         -ms-flex-pack: justify;
             justify-content: space-between; }
 
+.admin-members-table {
+  overflow-x: scroll; }
+  .admin-members-table td, .admin-members-table th {
+    text-align: center;
+    white-space: nowrap; }
+
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;

@@ -6,12 +6,11 @@
 <div class="container">
 <h1><a style='color:black;text-decoration:none' href="{{ route('admin.index') }}">Admin</a></h1>
 <h3>Unos novog člana</h3>
-<p class="help-block">Još ne radi u potpunosti</p>
 <hr style='border-color:#262626' />
 <form action="{{ route('admin.newmember') }}" method="POST" autocomplete="off">
 	<div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
 		<label for="first_name">Ime:</label>
-		<input required type="text" name='first_name' id='first_name' value="{{ Request::old('first_name') ?: '' }}" placeholder='Ime' class="form-control" maxlength="20">
+		<input required type="text" name='first_name' id='first_name' value="{{ Request::old('first_name') ?: '' }}" placeholder='Ime' class="form-control" maxlength="20" autofocus>
 		@if($errors->has('first_name'))
 			<p class="help-block">{{ $errors->first('first_name') }}</p>
 		@endif

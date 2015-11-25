@@ -206,3 +206,8 @@ Route::post('/admin/novi-clan', [
 	'as' => 'admin.newmember',
 	'middleware' => ['auth'],
 ]);
+Route::get('/admin/clanovi', [
+	'uses' => '\App\Http\Controllers\AdminController@getMembers',
+	'as' => 'admin.members',
+	'middleware' => ['auth'],
+]);
