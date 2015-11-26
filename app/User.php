@@ -88,6 +88,11 @@ class User extends Model implements AuthenticatableContract,
         return (bool)$this->admin;
     }
 
+    public function isMasterAdmin()
+    {
+        return (bool)$this->master_admin;
+    }
+
     public function isStoryAuthor(News $story)
     {
         if($this->id === $story->user_id) return true;

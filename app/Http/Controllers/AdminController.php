@@ -73,11 +73,15 @@ class AdminController extends Controller
         ];
 
 
-        if(in_array($order, $allowedOrder)){
-            if($order == 'created_at' || $order == 'active'){
-                $users = User::orderBy($order, 'desc')->get();
+        if($order){
+            if(in_array($order, $allowedOrder)){
+                if($order == 'created_at' || $order == 'active'){
+                    $users = User::orderBy($order, 'desc')->get();
+                } else {
+                    $users = User::orderBy($order)->get();
+                }
             } else {
-                $users = User::orderBy($order)->get();
+                return redirect()->back();
             }
         } else {
             $users = User::orderBy('last_name')->get();
@@ -87,6 +91,10 @@ class AdminController extends Controller
 
     public function getDeleteMember($id)
     {
+        if(!Auth::user()->isAdmin()){
+            return redirect()->route('home');
+        }
+
         $user = User::where('id', $id)->first();
         if(!$user || $user->isAdmin()){
             return redirect()->back();
@@ -103,6 +111,10 @@ class AdminController extends Controller
 
     public function getChangeActive($id)
     {
+        if(!Auth::user()->isAdmin()){
+            return redirect()->route('home');
+        }
+        
         $user = User::where('id', $id)->first();
         if(!$user || $user->isAdmin()){
             return redirect()->back();
@@ -123,5 +135,48 @@ class AdminController extends Controller
             'noConfirm' => true,
         ]);
         return redirect()->back();
+    }
+
+    public function getAdmins($order = null)
+    {
+        if(!Auth::user()->isAdmin()){
+            return redirect()->route('home');
+        }
+
+        $allowedOrder = [
+            'created_at',
+            'first_name',
+            'last_name',
+            'username',
+        ];
+
+        if($order){
+            if(in_array($order, $allowedOrder)){
+                if($order == 'created_at'){
+                    $users = User::where('admin', 1)->where('master_admin', 0)->orderBy($order, 'desc')->get();
+                } else {
+                    $users = User::where('admin', 1)->where('master_admin', 0)->orderBy($order)->get();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            $users = User::where('admin', 1)->where('master_admin', 0)->orderBy('last_name')->get();
+        }
+
+        return view('admin.admins')->with('users', $users);
+    }
+
+    public function getNewAdmin()
+    {
+        if(!Auth::user()->isAdmin()){
+            return redirect()->route('home');
+        }
+
+        return view('admin.newadmin');
+    }
+    public function postNewAdmin(Request $request)
+    {
+        dd("Posted!");
     }
 }

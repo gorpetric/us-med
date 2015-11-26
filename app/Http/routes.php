@@ -221,3 +221,18 @@ Route::get('/admin/changeactive/{id}', [
 	'as' => 'admin.changeactive',
 	'middleware' => ['auth'],
 ]);
+Route::get('/admin/admins/{order?}', [
+	'uses' => '\App\Http\Controllers\AdminController@getAdmins',
+	'as' => 'admin.admins',
+	'middleware' => ['auth'],
+]);
+Route::get('/admin/novi-admin', [
+	'uses' => '\App\Http\Controllers\AdminController@getNewAdmin',
+	'as' => 'admin.newadmin',
+	'middleware' => ['auth'],
+]);
+Route::post('/admin/novi-admin', [
+	'uses' => '\App\Http\Controllers\AdminController@postNewAdmin',
+	'as' => 'admin.newadmin',
+	'middleware' => ['auth'],
+]);
