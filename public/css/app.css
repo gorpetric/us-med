@@ -1454,12 +1454,28 @@ body.stop-scrolling {
         -ms-flex-align: center;
             align-items: center; }
 
-header.home-header {
-  background-image: url("../img/land1.JPG");
+header.home-header .carousel-control {
+  background: none; }
+
+header.home-header .bg1 {
+  background-image: url(../img/udruga/land1.JPG);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  height: 100vh;
+  height: 100vh; }
+
+header.home-header .bg2 {
+  background-image: url(../img/udruga/land2.JPG);
+  background-size: cover;
+  background-position: center;
+  height: 100vh; }
+
+header.home-header .bg3 {
+  background-image: url(../img/udruga/land3.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh; }
+
+header.home-header .flex-container {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1480,8 +1496,9 @@ header.home-header {
           align-items: center;
   color: white;
   overflow: hidden;
-  padding: 5px; }
-  header.home-header .parallax-title {
+  padding: 5px;
+  height: 100%; }
+  header.home-header .flex-container .parallax-title {
     font-size: 40px;
     text-align: center;
     padding: 10px 15px;
@@ -1595,11 +1612,6 @@ footer {
   max-width: 250px;
   max-height: 250px; }
 
-.home-news img {
-  margin: 0 auto;
-  margin-top: 40px;
-  margin-bottom: 40px; }
-
 .home-news .panel {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.55); }
   .home-news .panel .panel-body img {
@@ -1613,11 +1625,6 @@ footer {
     margin: 0 auto; }
   .home-news .panel .panel-body a {
     text-decoration: none; }
-
-.home-projects img {
-  margin: 0 auto;
-  margin-top: 40px;
-  margin-bottom: 40px; }
 
 .home-projects .nav-tabs {
   border: 1px solid #ddd;

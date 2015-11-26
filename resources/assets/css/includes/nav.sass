@@ -8,26 +8,47 @@
 		align-items: center
 
 header.home-header
-	background:
-		image: url('../img/land1.JPG')
-		size: cover
-		position: center
-		attachment: fixed
-	height: 100vh
-	position: relative
-	display: flex
-	flex-direction: column
-	justify-content: center
-	align-items: center
-	color: white
-	overflow: hidden
-	//filter: grayscale(0)
-	padding: 5px
+	.carousel-control
+		background: none
 
-	.parallax-title
-		font-size: 40px
-		text-align: center
-		padding: 10px 15px
+	.bg1
 		background:
-			color: transparentize(black, 0.5)
-		border-radius: 15px
+			image: url(../img/udruga/land1.JPG)
+			size: cover
+			position: center
+		height: 100vh
+
+	.bg2
+		background:
+			image: url(../img/udruga/land2.JPG)
+			size: cover
+			position: center
+		height: 100vh
+
+	.bg3
+		background:
+			image: url(../img/udruga/land3.jpg)
+			size: cover
+			position: center
+		height: 100vh
+
+
+	.flex-container
+		position: relative
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		color: white
+		overflow: hidden
+		//filter: grayscale(0)
+		padding: 5px
+		height: 100%
+
+		.parallax-title
+			font-size: 40px
+			text-align: center
+			padding: 10px 15px
+			background:
+				color: transparentize(black, 0.5)
+			border-radius: 15px

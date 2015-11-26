@@ -4,7 +4,8 @@
 
 @section('content')
 <header class='home-header'>
-	<h1 class='parallax-title'>Udruga studenata Međimurja</h1>
+	@include('partials/_home-carousel')
+	<!--<h1 class='parallax-title'>Udruga studenata Međimurja</h1>-->
 </header>
 <div class="container" style="margin-top:20px">
 	<div class="row">
@@ -25,7 +26,6 @@
 		</div>
 	</div>
 	<div class="home-news">
-		<img class='img-responsive' src="{{ asset('img/vijesti.png') }}">
 		@if(!$news->count())
 		<p class="help-block" style="text-align:center">Trenutno nema ni jedne vijesti.</p>
 		@else
@@ -33,7 +33,6 @@
 		@endif
 	</div> <!-- end home-news -->
 	<div class="home-projects">
-		<img class='img-responsive' src="{{ asset('img/projekti.png') }}">
 		@if(!$projects->count())
 			<p class="help-block" style="text-align:center">Trenutno nema ni jednog projekta.</p>
 		@else
@@ -50,6 +49,10 @@ $(window).scroll(function(){
 	$('.parallax-title').css({
 		'transform': 'translate(0px, '+ wScroll /2 +'px)'
 	});
+});
+$('.bg2, .bg3').html($('.bg1').html());
+$('.carousel').carousel({
+	pause: 'false'
 });
 </script>
 @stop
