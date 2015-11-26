@@ -55,5 +55,14 @@ $('.delete-link').click(function(e){
 		}
 	);
 });
+$('.letter img').each(function(){
+	var that = $(this);
+	var src = that.attr('src');
+	that.css({
+		'max-width': '200px',
+		'max-height': '150px'
+	});
+	that.wrap("<a target='_blank' data-lightbox='story-images' href='"+src+"'></a>");
+});
 </script>
 @stop

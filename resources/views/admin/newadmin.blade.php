@@ -17,7 +17,7 @@
 	Nikako <strong style='color:red'>NE</strong> popuniti / odabrati oboje (aplikacija u tom slučaju ne unosi ništa)
 </p>
 <p class="help-block">
-	Prije unosa treba upitati budućeg administratora za željeno korisničko ime. <small>(Aplikacija provjera da li je slobodno)</small>
+	Prije unosa treba upitati budućeg administratora za željeno korisničko ime. <small>(Aplikacija provjerava da li je slobodno)</small>
 </p>
 <p class="help-block">
 	Nasumičnu Lozinku unosite Vi. <small>Npr. neka kraća kombinacija imena i prezimena.</small>
