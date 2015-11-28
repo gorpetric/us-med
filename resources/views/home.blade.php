@@ -25,6 +25,8 @@
 			</p>
 		</div>
 	</div>
+</div>
+<div class="container">
 	<div class="home-news">
 		@if(!$news->count())
 		<p class="help-block" style="text-align:center">Trenutno nema ni jedne vijesti.</p>
@@ -49,6 +51,15 @@ $(window).scroll(function(){
 	$('.parallax-title').css({
 		'transform': 'translate(0px, '+ wScroll /2 +'px)'
 	});
+
+	var colSelect = $('.home-news .row .col-sm-6') 
+	if(wScroll > colSelect.offset().top - ($(window).height() / 1.2)){
+		colSelect.each(function(i){
+			setTimeout(function(){
+				colSelect.eq(i).addClass('is-showing');
+			}, 300 * (i+1));
+		});
+	}
 });
 $('.bg2, .bg3').html($('.bg1').html());
 $('.carousel').carousel({

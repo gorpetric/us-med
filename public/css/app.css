@@ -1461,19 +1461,19 @@ header.home-header .bg1 {
   background-image: url(../img/udruga/land1.JPG);
   background-size: cover;
   background-position: center;
-  height: 100vh; }
+  height: 85vh; }
 
 header.home-header .bg2 {
   background-image: url(../img/udruga/land2.JPG);
   background-size: cover;
   background-position: center;
-  height: 100vh; }
+  height: 85vh; }
 
 header.home-header .bg3 {
   background-image: url(../img/udruga/land3.jpg);
   background-size: cover;
   background-position: center;
-  height: 100vh; }
+  height: 85vh; }
 
 header.home-header .flex-container {
   position: relative;
@@ -1612,19 +1612,43 @@ footer {
   max-width: 250px;
   max-height: 250px; }
 
-.home-news .panel {
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.55); }
-  .home-news .panel .panel-body img {
-    margin: auto;
-    margin-bottom: 10px;
+.home-news .row .col-sm-6 {
+  opacity: 0;
+  -webkit-transform: translateX(20px);
+      -ms-transform: translateX(20px);
+          transform: translateX(20px); }
+  .home-news .row .col-sm-6.is-showing {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+            transform: translateX(0px);
+    -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out; }
+
+.home-news .story-out {
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.55);
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 20px;
+  text-align: center;
+  min-height: 525px; }
+  @media (max-width: 992px) {
+    .home-news .story-out {
+      min-height: 470px; } }
+  @media (max-width: 768px) {
+    .home-news .story-out {
+      min-height: auto; } }
+  .home-news .story-out img {
+    margin: 0 auto;
     width: 100%;
-    max-width: 300px;
-    height: 150px; }
-  .home-news .panel .panel-body button {
-    display: block;
-    margin: 0 auto; }
-  .home-news .panel .panel-body a {
-    text-decoration: none; }
+    width: 300px;
+    height: 200px; }
+    @media (max-width: 768px) {
+      .home-news .story-out img {
+        width: 100%; } }
+  .home-news .story-out .strip-story {
+    text-align: left;
+    margin: 10px 0; }
 
 .home-projects .nav-tabs {
   border: 1px solid #ddd;
@@ -2129,7 +2153,8 @@ header.profile {
             transform: rotate(360deg); } }
 
 * {
-  outline: none; }
+  outline: none;
+  box-sizing: border-box; }
 
 body {
   font-family: "Open Sans", sans-serif;
