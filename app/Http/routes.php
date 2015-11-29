@@ -158,6 +158,10 @@ Route::get('/partneri', [
 	'uses' => '\App\Http\Controllers\HomeController@getPartners',
 	'as' => 'pages.partners'
 ]);
+Route::get('/postani-clan', [
+	'uses' => '\App\Http\Controllers\HomeController@getBecomeMember',
+	'as' => 'pages.becomemember'
+]);
 
 /*
 * Profile

@@ -20,8 +20,8 @@ class ProfileController extends Controller
     public function postEdit(Request $request)
     {
     	$this->validate($request, [
-			'first_name' => 'alpha|max:20|min:2',
-			'last_name' => 'alpha|max:30|min:2',
+			'first_name' => 'required|alpha|max:20|min:2',
+			'last_name' => 'required|alpha|max:30|min:2',
 		]);
 
 		Auth::user()->update([

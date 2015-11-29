@@ -21,6 +21,7 @@
 						<li><a href="{{ route('pages.povijest') }}">Povijest</a></li>
 						<li><a href="{{ route('pages.statut') }}">Statut</a></li>
 						<li><a href="{{ route('pages.partners') }}">Partneri</a></li>
+						<li><a href="{{ route('pages.becomemember') }}">Postani član</a></li>
 					</ul>
 				</li>
 				<li><a href="{{ route('pages.kontakt') }}">Kontakt</a></li>

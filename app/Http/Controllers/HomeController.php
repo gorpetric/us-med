@@ -43,4 +43,9 @@ class HomeController extends Controller
     {
         return view('pages.partners');
     }
+
+    public function getBecomeMember()
+    {
+        return view('pages.becomemember');
+    }
 }
