@@ -1649,9 +1649,44 @@ footer {
     text-align: left;
     margin: 10px 0; }
 
+.home-projects img {
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.home-projects .nav-tabs {
+  border: 1px solid #ddd;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.55); }
+  .home-projects .nav-tabs li.active a {
+    background-color: #ddd;
+    border-bottom-color: #ddd; }
+    .home-projects .nav-tabs li.active a:hover, .home-projects .nav-tabs li.active a:active, .home-projects .nav-tabs li.active a:focus {
+      border-bottom-color: #ddd; }
+  .home-projects .nav-tabs li a:hover, .home-projects .nav-tabs li a:active, .home-projects .nav-tabs li a:focus {
+    border-bottom: 0; }
+
+.home-projects .tab-content .tab-pane {
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.55); }
+  .home-projects .tab-content .tab-pane img {
+    max-height: 300px;
+    margin: 0 auto; }
+  .home-projects .tab-content .tab-pane p {
+    text-align: justify; }
+  .home-projects .tab-content .tab-pane button {
+    display: block;
+    margin: 0 auto; }
+  .home-projects .tab-content .tab-pane a {
+    text-decoration: none; }
+  .home-projects .tab-content .tab-pane h4 {
+    text-align: center; }
+
 .home-become-member {
-  background: #262626;
   color: white;
+  background-color: #262626;
   margin: 20px 0;
   padding: 20px 10px; }
   .home-become-member h3 {
@@ -1659,18 +1694,21 @@ footer {
   .home-become-member p {
     text-align: justify; }
   .home-become-member a {
-    display: inline-block;
-    text-decoration: none;
+    text-decoration: none; }
+  .home-become-member button {
+    background: #262626;
+    display: block;
+    margin: 0 auto;
     color: white;
     padding: 6px 12px;
     border: 1px solid white;
     border-radius: 6px;
     white-space: nowrap;
     line-height: 2; }
-    .home-become-member a:hover {
+    .home-become-member button:hover {
       background: #eee;
-      color: #262626; }
-    .home-become-member a:active {
+      color: black; }
+    .home-become-member button:active {
       box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.35); }
 
 .vijest img {
@@ -2047,6 +2085,10 @@ header.gallery-header {
         width: 100%; } }
     .partneri .partner h4 {
       margin: 10px 0; }
+
+.become-member-form {
+  display: none;
+  margin: 20px 0; }
 
 header.profile {
   position: relative;

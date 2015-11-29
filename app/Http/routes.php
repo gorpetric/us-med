@@ -162,6 +162,10 @@ Route::get('/postani-clan', [
 	'uses' => '\App\Http\Controllers\HomeController@getBecomeMember',
 	'as' => 'pages.becomemember'
 ]);
+Route::post('/postani-clan', [
+	'uses' => '\App\Http\Controllers\HomeController@postBecomeMember',
+	'as' => 'pages.becomemember'
+]);
 
 /*
 * Profile

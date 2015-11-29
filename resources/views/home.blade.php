@@ -41,7 +41,7 @@
 			<div class="col-sm-8 col-sm-offset-2">
 				<h3>Postani član</h3>
 				<p>Udruga studenata Međimurja pomaže studentima u ostvarivanju njihovih prava posredovanjem u komunikaciji između studenata i upravnih tijela Sveučilišta i drugih institucija. Organizira prigodne manifestacije kojima nastoji podržati interese članova i studenata, te promovirati i njegovati tradiciju i običaje Međimurske županije. Cilj je Udruge da tvori zajednicu u kojoj se njezini članovi osjećaju ugodno, u kojoj se mogu međusobno družiti, zatražiti pomoć te da se i izvan svoje županije osjećaju kao kod kuće.</p>
-				<a href="{{ route('pages.becomemember') }}">Kako postati član?</a>
+				<a href="{{ route('pages.becomemember') }}"><button>Kako postati član?</button></a>
 			</div>
 		</div>
 	</div>
@@ -65,8 +65,8 @@ $(window).scroll(function(){
 		'transform': 'translate(0px, '+ wScroll /2 +'px)'
 	});
 
-	var colSelect = $('.home-news .row .col-sm-6') 
-	if(wScroll > colSelect.offset().top - ($(window).height() / 1.2)){
+	var colSelect = $('.home-news .row .col-sm-6');
+	if(colSelect.length && wScroll > colSelect.offset().top - ($(window).height() / 1.2)){
 		colSelect.each(function(i){
 			setTimeout(function(){
 				colSelect.eq(i).addClass('is-showing');
