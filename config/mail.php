@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'no-reply@us-medjimurje.hr', 'name' => null],
+    'from' => ['address' => 'no-reply@us-medjimurje.hr', 'name' => 'Udruga studenata Međimurja'],
 
     /*
     |--------------------------------------------------------------------------

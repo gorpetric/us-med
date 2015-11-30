@@ -63,6 +63,17 @@ class HomeController extends Controller
             'email' => 'required|email|unique:users',
         ]);
 
-        dd("Validation OK!");
+        $podaci = $request->all();
+        Mail::send('email.test', ['podaci' => $podaci], function($m) use($request){
+            $m->to($request->input('email'), $request->input('first_name').' '.$request->input('last_name'))->subject('Novi član - zahtjev');
+        });
+        Mail::send('email.touser', ['podaci' => $podaci], function($m) use($request){
+            $m->to($request->input('email'), $request->input('first_name').' '.$request->input('last_name'))->subject('Zahtjev za članstvo zaprimljen');
+        });
+
+        notify()->flash('Zahtjev zaprimljen!', 'success', [
+            'text' => 'Sljedeći korak je plaćanje 20kn tajniku Udruge. Kopija unesenih podataka poslana je na uneseni email.'
+        ]);
+        return redirect()->back();
     }
 }
