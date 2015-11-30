@@ -78,5 +78,19 @@ $('.bg2, .bg3').html($('.bg1').html());
 $('.carousel').carousel({
 	pause: 'false'
 });
+function equalHeight(){
+	var maxh = 0;
+	$('.story-out').each(function(){
+		$(this).height('auto');
+		if($(this).height() > maxh){
+			maxh=$(this).height();
+		}
+	});
+	$('.story-out').height(maxh);
+}
+equalHeight();
+setInterval(function(){
+	equalHeight();
+},0);
 </script>
 @stop

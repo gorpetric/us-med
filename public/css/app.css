@@ -1628,14 +1628,10 @@ footer {
 .home-news .story-out {
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.55);
   border-radius: 5px;
-  margin: 10px 0;
-  min-height: 490px; }
-  @media (max-width: 992px) {
-    .home-news .story-out {
-      min-height: 440px; } }
+  margin: 10px 0; }
   @media (max-width: 768px) {
     .home-news .story-out {
-      min-height: auto; } }
+      height: auto; } }
   .home-news .story-out img {
     display: block;
     margin: 0 auto 10px;
