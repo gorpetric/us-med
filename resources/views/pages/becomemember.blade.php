@@ -10,13 +10,21 @@
 <p><strong>Prava i obveze članova?</strong></p>
 <p style='text-align:justify'>Prava i obveze članova Udruge definirana su Statutom, a članovi su pozvani da sudjeluju u svim aktivnostima Udruge, bivaju informirani o radu Udruge, imaju pravo birati i biti birani u tijela Udruge, mogu odlučivati u onim tijelima u kojima su članovi, nadziru djelovanje i zahtijevaju odgovornost tijela i pojedinaca u Udruzi, poštuju i provode odluke tijela Udruge i Statuta, izvršavaju povjerene zadatke, svojim djelovanjem moraju štititi interese, ugled, čast i imovinu Udruge, obvezuju se na redovito plaćanje godišnje članarine, a ukoliko ustvrde nepravilnosti u provedbi statuta, dužni su upozoriti Predsjedništvo.</p>
 <p><strong>Kako postati članom?</strong></p>
-<p style='text-align:justify'>Udruzi studenata Međimurja pristupa se ispunjavanjem pristupnice, čime se obvezuje na sudjelovanje u radu Udruge i poštivanje njenoga Statuta i drugih akata, kao i upravnih tijela. Novopridošli članovi plaćaju upisninu  u iznosu od 20,00 HRK. Pristupnica se može dobiti u sjedištu Udruge, sastancima, projektima ili bilo kojiom aktivnostima kojima se Udruga bavi. Drugi način je popunjavanje obrasca na ovoj stranici.</p>
-<button class='btn btn-primary show-form'>Prikaži obrazac</button>
+<p style='text-align:justify'>Udruzi studenata Međimurja pristupa se ispunjavanjem pristupnice, čime se obvezuje na sudjelovanje u radu Udruge i poštivanje njenoga Statuta i drugih akata, kao i upravnih tijela. Novopridošli članovi plaćaju upisninu  u iznosu od 20,00 HRK. Pristupnica se može dobiti u sjedištu Udruge, sastancima, projektima ili bilo kojim aktivnostima kojima se Udruga bavi. Drugi način je popunjavanje obrasca na ovoj stranici.</p>
+<p>
+Podaci za plaćanje članarine bankovnim putem:<br>
+<i>Iznos:</i> <strong>20,00 kuna</strong><br>
+<i>Kunski IBAN broj:</i> <strong>HR2423400091110513415</strong><br>
+<i>Model:</i> <strong>HR00</strong><br>
+<i>Poziv na broj primatelja:</i> <strong><i>današnji datum</i></strong><br>
+<i>Opis plaćanja:</i> <strong>Članarina - <i>Ime Prezime</i></strong><br>
+</p>
+<button class="btn {{ $errors->count() ? 'btn-warning' : 'btn-primary' }} show-form">Prikaži obrazac</button>
 <div class="become-member-form">
 	<form action="{{ route('pages.becomemember') }}" method="POST" autocomplete="off">
 		<div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
 			<label for="first_name">Ime:</label>
-			<input required type="text" name='first_name' id='first_name' value="{{ Request::old('first_name') ?: '' }}" placeholder='Ime' class="form-control" maxlength="20" autofocus>
+			<input required type="text" name='first_name' id='first_name' value="{{ Request::old('first_name') ?: '' }}" placeholder='Ime' class="form-control" maxlength="20">
 			@if($errors->has('first_name'))
 				<p class="help-block">{{ $errors->first('first_name') }}</p>
 			@endif
@@ -44,14 +52,14 @@
 		</div>
 		<div class="form-group{{ $errors->has('faculty') ? ' has-error' : '' }}">
 			<label for="faculty">Fakultet:</label>
-			<input required type="text" name='faculty' id='faculty' value="{{ Request::old('faculty') ?: '' }}" placeholder='Fakultet' class="form-control">
+			<input required type="text" name='faculty' id='faculty' value="{{ Request::old('faculty') ?: '' }}" placeholder='Puno ime fakulteta' class="form-control">
 			@if($errors->has('faculty'))
 				<p class="help-block">{{ $errors->first('faculty') }}</p>
 			@endif
 		</div>
 		<div class="form-group{{ $errors->has('course') ? ' has-error' : '' }}">
 			<label for="course">Smjer:</label>
-			<input required type="text" name='course' id='course' value="{{ Request::old('course') ?: '' }}" placeholder='Smjer' class="form-control">
+			<input required type="text" name='course' id='course' value="{{ Request::old('course') ?: '' }}" placeholder='Puno ime smjera' class="form-control">
 			@if($errors->has('faculty'))
 				<p class="help-block">{{ $errors->first('course') }}</p>
 			@endif

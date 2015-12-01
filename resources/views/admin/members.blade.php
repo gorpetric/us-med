@@ -49,7 +49,11 @@
 								NE! <a class='delete-link' href="{{ route('admin.changeactive', ['id'=>$user->id]) }}" data-swal-text='Aktivacija članarine ovog člana'>Aktiviraj</a>
 							@endif
 						</td>
-						<td><a class='delete-link' href="{{ route('admin.deletemember', ['id'=>$user->id]) }}" data-swal-text='Član i svi podaci o njemu biti će izgubljeni'>Obriši</a></td>
+						<td>
+							<a href="{{ route('admin.editmember', ['id'=>$user->id]) }}">Uredi</a>
+							<span class="glyphicon glyphicon-minus"></span>
+							<a class='delete-link' href="{{ route('admin.deletemember', ['id'=>$user->id]) }}" data-swal-text='Član i svi podaci o njemu biti će izgubljeni'>Obriši</a>
+						</td>
 					</tr>
 				@endif
 				@endforeach

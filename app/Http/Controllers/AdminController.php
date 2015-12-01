@@ -89,6 +89,53 @@ class AdminController extends Controller
         return view('admin.members')->with('users', $users);
     }
 
+    public function getEditMember($id)
+    {
+        if(!Auth::user()->isAdmin()){
+            return redirect()->route('home');
+        }
+
+        $user = User::where('id', $id)->first();
+        if(!$user || $user->isAdmin()){
+            return redirect()->back();
+        }
+
+        return view('admin.editmember')->with('user', $user);
+    }
+    public function postEditMember($id, Request $request)
+    {
+        $user = User::where('id', $id)->first();
+        if(!$user || $user->isAdmin()){
+            return redirect()->back();
+        }
+
+        $this->validate($request, [
+            'first_name' => 'required|max:20|min:2',
+            'last_name' => 'required|max:30|min:2',
+            'birthday' => 'required|date',
+            'oib' => 'required|numeric',
+            'faculty' => 'required',
+            'course' => 'required',
+            'year' => 'required|numeric',
+        ]);
+
+        User::where('id', $user->id)->update([
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'birthday' => $request->input('birthday'),
+            'oib' => $request->input('oib'),
+            'faculty' => $request->input('faculty'),
+            'course' => $request->input('course'),
+            'year' => $request->input('year')
+        ]);
+
+        notify()->flash('Podaci člana uspješno uređeni!', 'success', [
+            'timer' => 2500,
+            'noConfirm' => true,
+        ]);
+        return redirect()->route('admin.members');
+    }
+
     public function getDeleteMember($id)
     {
         if(!Auth::user()->isAdmin()){

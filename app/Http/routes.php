@@ -219,6 +219,16 @@ Route::get('/admin/clanovi/{order?}', [
 	'as' => 'admin.members',
 	'middleware' => ['auth'],
 ]);
+Route::get('/admin/editmember/{id}', [
+	'uses' => '\App\Http\Controllers\AdminController@getEditMember',
+	'as' => 'admin.editmember',
+	'middleware' => ['auth'],
+]);
+Route::post('/admin/editmember/{id}', [
+	'uses' => '\App\Http\Controllers\AdminController@postEditMember',
+	'as' => 'admin.editmember',
+	'middleware' => ['auth'],
+]);
 Route::get('/admin/deletemember/{id}', [
 	'uses' => '\App\Http\Controllers\AdminController@getDeleteMember',
 	'as' => 'admin.deletemember',

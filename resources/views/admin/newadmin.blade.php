@@ -28,7 +28,7 @@
 <form action="{{ route('admin.newadmin') }}" method="POST" autocomplete="off">
 	<div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
 		<label for="first_name">Ime:</label>
-		<input type="text" name='first_name' id='first_name' value="{{ Request::old('first_name') ?: '' }}" placeholder='Ime' class="form-control" maxlength="20" autofocus>
+		<input type="text" name='first_name' id='first_name' value="{{ Request::old('first_name') ?: '' }}" placeholder='Ime' class="form-control" maxlength="20">
 		@if($errors->has('first_name'))
 			<p class="help-block">{{ $errors->first('first_name') }}</p>
 		@endif
