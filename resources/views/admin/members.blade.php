@@ -9,6 +9,9 @@
 <hr style='border-color:#262626' />
 <p class='help-block'>Početni poredak: Prezime</p>
 <p class='help-block'>1 (Aktivno) - Član platio članarinu / članarina važeća</p>
+@if(Auth::user()->isMasterAdmin())
+	<p class="help-block">2 (Ukloni kao administratora) - Član ostaje u bazi kao običan član ali gubi mogućnost prijave i administrativnih privligeija <small>(ovu poruku vidi samo master admin)</small></p>
+@endif
 </div> <!-- /.container -->
 <div class="container-fluid">
 	<div class="table-responsive admin-members-table">
@@ -62,7 +65,11 @@
 								<span class="glyphicon glyphicon-minus"></span>
 								<a class='delete-link' href="{{ route('admin.deletemember', ['id'=>$user->id]) }}" data-swal-text='Član i svi podaci o njemu biti će izgubljeni'>Obriši</a>
 							@else
-								<span class="glyphicon glyphicon-minus"></span>
+								@if(Auth::user()->isMasterAdmin() && !$user->isMasterAdmin())
+									<a class='delete-link' href="{{ route('admin.removeadmin', ['id' => $user->id]) }}" data-swal-text='Član gubi administrativne privilegije i mogućnost prijave'>Ukloni kao administratora<sup>2</sup></a>
+								@else
+									<span class="glyphicon glyphicon-minus"></span>
+								@endif
 							@endif
 						</td>
 					</tr>

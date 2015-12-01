@@ -280,4 +280,28 @@ class AdminController extends Controller
             return redirect()->back();
         }
     }
+
+    public function getRemoveAdmin($id)
+    {
+        if(!Auth::user()->isMasterAdmin()){
+            return redirect()->route('home');
+        }
+
+        $user = User::where('id', $id)->first();
+        if(!$user || !$user->isAdmin() || $user->isMasterAdmin()){
+            return redirect()->back();
+        }
+
+        $user->update([
+            'admin' => 0,
+            'username' => null,
+            'password' => null,
+        ]);
+
+        notify()->flash('Član više nije administrator!', 'success', [
+            'timer' => 2500,
+            'noConfirm' => true,
+        ]);
+        return redirect()->back();
+    }
 }

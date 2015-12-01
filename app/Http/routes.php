@@ -254,3 +254,8 @@ Route::post('/admin/novi-admin', [
 	'as' => 'admin.newadmin',
 	'middleware' => ['auth'],
 ]);
+Route::get('/admin/remove-admin/{id}', [
+	'uses' => '\App\Http\Controllers\AdminController@getRemoveAdmin',
+	'as' => 'admin.removeadmin',
+	'middleware' => ['auth'],
+]);
