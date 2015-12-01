@@ -10,7 +10,7 @@
 <form action="{{ route('admin.editmember', ['id' => $user->id]) }}" method="POST" autocomplete="off">
 	<div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
 		<label for="first_name">Ime:</label>
-		<input required type="text" name='first_name' id='first_name' value="{{ Request::old('first_name') ?: $user->first_name }}" placeholder='Ime' class="form-control" maxlength="20" autofocus>
+		<input required type="text" name='first_name' id='first_name' value="{{ Request::old('first_name') ?: $user->first_name }}" placeholder='Ime' class="form-control" maxlength="20">
 		@if($errors->has('first_name'))
 			<p class="help-block">{{ $errors->first('first_name') }}</p>
 		@endif

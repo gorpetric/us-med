@@ -31,31 +31,41 @@
 			<tbody>
 				@if($users->count())
 				@foreach($users as $user)
-				@if(!$user->isAdmin())
 					<tr>
-						<td>{{ $user->created_at->diffForHumans() }}</td>
+						<td>{{ $user->created_at->format('d.m.Y. H:i') }}</td>
 						<td>{{ $user->first_name }}</td>
 						<td>{{ $user->last_name }}</td>
-						<td>{{ $user->birthday->format('d.m.Y.') }}</td>
+						<td>
+							@if($user->birthday)
+								{{ $user->birthday->format('d.m.Y.') }}
+							@endif
+						</td>
 						<td>{{ $user->oib }}</td>
 						<td>{{ $user->faculty }}</td>
 						<td>{{ $user->course }}</td>
 						<td>{{ $user->year }}</td>
 						<td>{{ $user->email }}</td>
 						<td>
-							@if($user->active)
-								DA! <a class='delete-link' href="{{ route('admin.changeactive', ['id'=>$user->id]) }}" data-swal-text='Deaktivacija članarine ovog člana'>Deaktiviraj</a>
+							@if(!$user->isAdmin())
+								@if($user->active)
+									DA! <a class='delete-link' href="{{ route('admin.changeactive', ['id'=>$user->id]) }}" data-swal-text='Deaktivacija članarine ovog člana'>Deaktiviraj</a>
+								@else
+									NE! <a class='delete-link' href="{{ route('admin.changeactive', ['id'=>$user->id]) }}" data-swal-text='Aktivacija članarine ovog člana'>Aktiviraj</a>
+								@endif
 							@else
-								NE! <a class='delete-link' href="{{ route('admin.changeactive', ['id'=>$user->id]) }}" data-swal-text='Aktivacija članarine ovog člana'>Aktiviraj</a>
+								{{ $user->active ? 'DA!' : 'NE!' }}
 							@endif
 						</td>
 						<td>
-							<a href="{{ route('admin.editmember', ['id'=>$user->id]) }}">Uredi</a>
-							<span class="glyphicon glyphicon-minus"></span>
-							<a class='delete-link' href="{{ route('admin.deletemember', ['id'=>$user->id]) }}" data-swal-text='Član i svi podaci o njemu biti će izgubljeni'>Obriši</a>
+							@if(!$user->isAdmin())
+								<a href="{{ route('admin.editmember', ['id'=>$user->id]) }}">Uredi</a>
+								<span class="glyphicon glyphicon-minus"></span>
+								<a class='delete-link' href="{{ route('admin.deletemember', ['id'=>$user->id]) }}" data-swal-text='Član i svi podaci o njemu biti će izgubljeni'>Obriši</a>
+							@else
+								<span class="glyphicon glyphicon-minus"></span>
+							@endif
 						</td>
 					</tr>
-				@endif
 				@endforeach
 				@endif
 			</tbody>

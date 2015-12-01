@@ -22,11 +22,21 @@ class ProfileController extends Controller
     	$this->validate($request, [
 			'first_name' => 'required|alpha|max:20|min:2',
 			'last_name' => 'required|alpha|max:30|min:2',
+            'birthday' => 'required|date',
+            'oib' => 'required|numeric',
+            'faculty' => 'required',
+            'course' => 'required',
+            'year' => 'required|numeric',
 		]);
 
 		Auth::user()->update([
 			'first_name' => $request->input('first_name'),
 			'last_name' => $request->input('last_name'),
+            'birthday' => $request->input('birthday'),
+            'oib' => $request->input('oib'),
+            'faculty' => $request->input('faculty'),
+            'course' => $request->input('course'),
+            'year' => $request->input('year'),
 		]);
 
 		notify()->flash('Račun uspješno uređen', 'success', [

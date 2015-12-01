@@ -21,7 +21,7 @@
 		<tbody>
 			@foreach($users as $user)
 				<tr>
-					<th>{{ $user->created_at->diffForHumans() }}</th>
+					<th>{{ $user->created_at->format('d.m.Y. H:i') }}</th>
 					<th>{{ $user->last_name }}</th>
 					<th>{{ $user->first_name }}</th>
 					<th>{{ $user->username }}</th>
