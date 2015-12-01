@@ -9,9 +9,13 @@
 <hr style='border-color:#262626' />
 <p class='help-block'>Početni poredak: Prezime</p>
 <p class='help-block'>1 (Aktivno) - Član platio članarinu / članarina važeća</p>
-@if(Auth::user()->isMasterAdmin())
-	<p class="help-block">2 (Ukloni kao administratora) - Član ostaje u bazi kao običan član ali gubi mogućnost prijave i administrativnih privligeija <small>(ovu poruku vidi samo master admin)</small></p>
-@endif
+<p class="help-block">
+	2 (Admin) - Trenutni administrator može postaviti novog administratora<br>
+	2 a) Ako član koji se želi postaviti kao administrator nema korisnički račun, aplikacija Vas vodi na mjesto gdje se isti postavlja<br>
+	2 b) Ako član koji se želi postaviti kao administrator već ima korisnički račun, on se postavlja kao administrator automatski nakon potvrde akcije<br>
+	2 c) Za uklanjanje administratora, kontaktirati <i>Web Moderatora</i>
+</p>
+<p class="help-block">3 (Akcija) - Brisanje i uređivanje člana dopušteno je ako član nije administrator</p>
 </div> <!-- /.container -->
 <div class="container-fluid">
 	<div class="table-responsive admin-members-table">
@@ -28,7 +32,8 @@
 					<th><a href="{{ route('admin.members', ['order'=>'year']) }}">Godina studija</th>
 					<th>E-mail</th>
 					<th><a href="{{ route('admin.members', ['order'=>'active']) }}">Aktivno<sup>1</sup></th>
-					<th>Akcija</th>
+					<th><a href="{{ route('admin.members', ['order'=>'admin']) }}">Admin<sup>2</sup></a></th>
+					<th>Akcija<sup>3</sup></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -51,25 +56,32 @@
 						<td>
 							@if(!$user->isAdmin())
 								@if($user->active)
-									DA! <a class='delete-link' href="{{ route('admin.changeactive', ['id'=>$user->id]) }}" data-swal-text='Deaktivacija članarine ovog člana'>Deaktiviraj</a>
+									DA! <a class='delete-link' href="{{ route('admin.changeactive', ['id'=>$user->id]) }}" data-swal-text="Deaktivacija članarine za {{ $user->getFullName() }}">Deaktiviraj</a>
 								@else
-									NE! <a class='delete-link' href="{{ route('admin.changeactive', ['id'=>$user->id]) }}" data-swal-text='Aktivacija članarine ovog člana'>Aktiviraj</a>
+									NE! <a class='delete-link' href="{{ route('admin.changeactive', ['id'=>$user->id]) }}" data-swal-text="Aktivacija članarine za {{ $user->getFullName() }}">Aktiviraj</a>
 								@endif
 							@else
 								{{ $user->active ? 'DA!' : 'NE!' }}
 							@endif
 						</td>
 						<td>
+							@if($user->isAdmin())
+								@if(Auth::user()->isMasterAdmin() && !$user->isMasterAdmin())
+									DA! <a class='delete-link' href="{{ route('admin.removeadmin', ['id'=>$user->id]) }}" data-swal-text="Član {{ $user->getFullName() }} gubi administrativne privilegije">Ukloni</a>
+								@else
+									<i>Web Moderator</i>
+								@endif
+							@else
+								NE! <a class='delete-link' href="{{ route('admin.newadmin', ['id'=>$user->id]) }}" data-swal-text="Postavi {{ $user->getFullName() }} za administratora">Postavi</a>
+							@endif
+						</td>
+						<td>
 							@if(!$user->isAdmin())
 								<a href="{{ route('admin.editmember', ['id'=>$user->id]) }}">Uredi</a>
 								<span class="glyphicon glyphicon-minus"></span>
-								<a class='delete-link' href="{{ route('admin.deletemember', ['id'=>$user->id]) }}" data-swal-text='Član i svi podaci o njemu biti će izgubljeni'>Obriši</a>
+								<a class='delete-link' href="{{ route('admin.deletemember', ['id'=>$user->id]) }}" data-swal-text='Član {{ $user->getFullName() }} i svi podaci o njemu biti će izgubljeni'>Obriši</a>
 							@else
-								@if(Auth::user()->isMasterAdmin() && !$user->isMasterAdmin())
-									<a class='delete-link' href="{{ route('admin.removeadmin', ['id' => $user->id]) }}" data-swal-text='Član gubi administrativne privilegije i mogućnost prijave'>Ukloni kao administratora<sup>2</sup></a>
-								@else
-									<span class="glyphicon glyphicon-minus"></span>
-								@endif
+								<span class="glyphicon glyphicon-minus"></span>
 							@endif
 						</td>
 					</tr>

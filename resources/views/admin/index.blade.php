@@ -10,10 +10,5 @@
 		<span class="glyphicon glyphicon-minus"></span>
 	<a href="{{ route('admin.members') }}">Svi članovi</a>
 </p>
-<p>
-	<a href="{{ route('admin.newadmin') }}">Unos novog administratora</a>
-		<span class="glyphicon glyphicon-minus"></span>
-	<a href="{{ route('admin.admins') }}">Svi administratori</a>
-</p>
 </div>
 @stop
