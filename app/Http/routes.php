@@ -254,3 +254,13 @@ Route::get('/admin/remove-admin/{id}', [
 	'as' => 'admin.removeadmin',
 	'middleware' => ['auth'],
 ]);
+Route::get('/admin/pocetna-slika/{action?}', [
+	'uses' => '\App\Http\Controllers\AdminController@getHomeHeaderImg',
+	'as' => 'admin.homeheaderimg',
+	'middleware' => ['auth'],
+]);
+Route::post('/admin/pocetna-slika/{action?}', [
+	'uses' => '\App\Http\Controllers\AdminController@postHomeHeaderImg',
+	'as' => 'admin.homeheaderimg',
+	'middleware' => ['auth'],
+]);

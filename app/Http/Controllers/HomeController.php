@@ -15,9 +15,13 @@ class HomeController extends Controller
     {
     	$news = News::orderBy('created_at', 'desc')->take(4)->get();
     	$projects = Project::orderBy('created_at', 'desc')->take(4)->get();
+        if(file_exists('img/udruga/homeheaderimg.jpg')) $img = true;
+        else $img = false;
+
         return view('home')->with([
         	'news' => $news,
         	'projects' => $projects,
+            'img' => $img,
         ]);
     }
 

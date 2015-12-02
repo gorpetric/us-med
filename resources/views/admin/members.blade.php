@@ -16,10 +16,11 @@
 	2 c) Za uklanjanje administratora, kontaktirati <i>Web Moderatora</i>
 </p>
 <p class="help-block">3 (Akcija) - Brisanje i uređivanje člana dopušteno je ako član nije administrator</p>
+<p><a class='select-table' href="#">Označi tablicu</a></p>
 </div> <!-- /.container -->
 <div class="container-fluid">
 	<div class="table-responsive admin-members-table">
-		<table class='table table-hover table-bordered'>
+		<table id='select-me' class='table table-hover table-bordered'>
 			<thead>
 				<tr class='info'>
 					<th><a href="{{ route('admin.members', ['order'=>'created_at']) }}">Kreirano</a></th>
@@ -111,6 +112,27 @@ $('.delete-link').click(function(e){
 			location.href=that.attr('href');
 		}
 	);
+});
+function SelectText(element) {
+    var doc = document
+        , text = doc.getElementById(element)
+        , range, selection
+    ;    
+    if (doc.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+    } else if (window.getSelection) {
+        selection = window.getSelection();        
+        range = document.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+}
+$('.select-table').click(function(){
+	SelectText('select-me');
+	return false;
 });
 </script>
 @stop

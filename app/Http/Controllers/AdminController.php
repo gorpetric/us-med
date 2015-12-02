@@ -256,4 +256,40 @@ class AdminController extends Controller
         ]);
         return redirect()->back();
     }
+
+    public function getHomeHeaderImg($action = null)
+    {
+        if(!Auth::user()->isAdmin()){
+            return redirect()->route('home');
+        }
+
+        if($action){
+            if($action === 'remove'){
+                if(file_exists('img/udruga/homeheaderimg.jpg')){
+                    unlink(public_path('img/udruga/homeheaderimg.jpg'));
+                } else {
+                    return redirect()->back();    
+                }
+            } else {
+                return redirect()->back();
+            }
+        }
+
+        if(file_exists('img/udruga/homeheaderimg.jpg')){
+            $img = true;
+        } else {
+            $img = false;
+        }
+        return view('admin.homeheaderimg')->with('img', $img);
+    }
+    public function postHomeHeaderImg(Request $request)
+    {
+        $this->validate($request, [
+            'image' => 'required|mimes:jpeg,jpg'
+        ]);
+
+        $request->file('image')->move('img/udruga', 'homeheaderimg.jpg');
+
+        return redirect()->route('admin.homeheaderimg');
+    }
 }

@@ -10,5 +10,8 @@
 		<span class="glyphicon glyphicon-minus"></span>
 	<a href="{{ route('admin.members') }}">Svi članovi</a>
 </p>
+<p>
+	<a href="{{ route('admin.homeheaderimg') }}">Početna slika</a>
+</p>
 </div>
 @stop

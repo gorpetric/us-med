@@ -39,14 +39,14 @@
 	</div>
 	<div class="form-group{{ $errors->has('faculty') ? ' has-error' : '' }}">
 		<label for="faculty">Fakultet:</label>
-		<input required type="text" name='faculty' id='faculty' value="{{ Request::old('faculty') ?: $user->faculty }}" placeholder='Fakultet' class="form-control">
+		<input required type="text" name='faculty' id='faculty' value="{{ Request::old('faculty') ?: $user->faculty }}" placeholder='Puno ime fakulteta' class="form-control">
 		@if($errors->has('faculty'))
 			<p class="help-block">{{ $errors->first('faculty') }}</p>
 		@endif
 	</div>
 	<div class="form-group{{ $errors->has('course') ? ' has-error' : '' }}">
 		<label for="course">Smjer:</label>
-		<input required type="text" name='course' id='course' value="{{ Request::old('course') ?: $user->course }}" placeholder='Smjer' class="form-control">
+		<input required type="text" name='course' id='course' value="{{ Request::old('course') ?: $user->course }}" placeholder='Puno ime smjera' class="form-control">
 		@if($errors->has('faculty'))
 			<p class="help-block">{{ $errors->first('course') }}</p>
 		@endif

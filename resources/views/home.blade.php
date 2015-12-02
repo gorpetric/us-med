@@ -75,6 +75,10 @@ $(window).scroll(function(){
 	}
 });
 $('.bg2, .bg3').html($('.bg1').html());
+@if($img)
+	var imageUrl = 'img/udruga/homeheaderimg.jpg';
+	$('.bg2').css('background-image', 'url('+ imageUrl +')');
+@endif
 $('.carousel').carousel({
 	pause: 'false'
 });
