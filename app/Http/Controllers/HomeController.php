@@ -15,7 +15,7 @@ class HomeController extends Controller
     {
     	$news = News::orderBy('created_at', 'desc')->take(4)->get();
     	$projects = Project::orderBy('created_at', 'desc')->take(4)->get();
-        if(file_exists('img/udruga/homeheaderimg.jpg')) $img = true;
+        if(file_exists('img/udruga/homeheaderimg.jpg')) $img = json_decode(file_get_contents(public_path('img/udruga/homeheaderimg.json')), true);
         else $img = false;
 
         return view('home')->with([

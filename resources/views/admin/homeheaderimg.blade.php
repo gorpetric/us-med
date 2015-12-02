@@ -10,6 +10,7 @@
 <p><i>Početna slika</i> omogućava promjenu jednu od 3 slika koje se nalaze na početnoj stranici.</p>
 @if($img)
 	<img class='img-responsive' src="{{ asset('img/udruga/homeheaderimg.jpg') }}" style="width:250px;height:200px;margin-bottom:10px">
+	<p>Slide: {{ $img['slide'] }}</p>
 	<a href="{{ route('admin.homeheaderimg', ['action' => 'remove']) }}">Ukloni trenutnu sliku</a>
 @else
 	<form action="{{ route('admin.homeheaderimg') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
@@ -18,6 +19,15 @@
 			<input type="file" name="image" id="image" class="form-control">
 			@if($errors->has('image'))
 				<p class="help-block">{{ $errors->first('image') }}</p>
+			@endif
+		</div>
+		<div class="form-group{{ $errors->has('slide') ? ' has-error' : '' }}">
+			<label for="slide">Slide:</label>
+			<input type="radio" name="slide" id="slide" value="1">1
+			<input type="radio" name="slide" value="2">2
+			<input type="radio" name="slide" value="3">3
+			@if($errors->has('slide'))
+				<p class="help-block">{{ $errors->first('slide') }}</p>
 			@endif
 		</div>
 		<input type="submit" value="Postavi" class="btn btn-default">

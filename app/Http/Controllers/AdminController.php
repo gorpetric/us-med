@@ -267,16 +267,22 @@ class AdminController extends Controller
             if($action === 'remove'){
                 if(file_exists('img/udruga/homeheaderimg.jpg')){
                     unlink(public_path('img/udruga/homeheaderimg.jpg'));
+                    $forjson=[
+                        'image' => null,
+                        'text' => null,
+                        'slide' => null,
+                    ];
+                    file_put_contents(public_path('img/udruga/homeheaderimg.json'), json_encode($forjson));
                 } else {
-                    return redirect()->back();    
+                    return redirect()->route('admin.homeheaderimg');    
                 }
             } else {
-                return redirect()->back();
+                return redirect()->route('admin.homeheaderimg');
             }
         }
 
         if(file_exists('img/udruga/homeheaderimg.jpg')){
-            $img = true;
+            $img = json_decode(file_get_contents(public_path('img/udruga/homeheaderimg.json')), true);
         } else {
             $img = false;
         }
@@ -285,10 +291,19 @@ class AdminController extends Controller
     public function postHomeHeaderImg(Request $request)
     {
         $this->validate($request, [
-            'image' => 'required|mimes:jpeg,jpg'
+            'image' => 'required|mimes:jpeg,jpg',
+            'slide' => 'required|numeric|max:3|min:1',
         ]);
 
         $request->file('image')->move('img/udruga', 'homeheaderimg.jpg');
+
+        $forjson=[
+            'image' => 'homeheaderimg.jpg',
+            'text' => null,
+            'slide' => $request->input('slide'),
+        ];
+
+        file_put_contents(public_path('img/udruga/homeheaderimg.json'), json_encode($forjson));
 
         return redirect()->route('admin.homeheaderimg');
     }
