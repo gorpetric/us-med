@@ -3,8 +3,16 @@
 @section('title'){{'Partneri'}}@stop
 
 @section('content')
+<header class="pages-header">
+	<div class="container">
+		<div class="flex-container">
+			<div class='title'>
+				<h1><a href="{{ route('pages.partners') }}"><span class="glyphicon glyphicon-bookmark"></span> Partneri</a></h1>
+			</div>
+		</div>
+	</div>
+</header>
 <div class="container">
-<h1>Partneri</h1><hr style='border-color:#262626' />
 <div class="partneri">
 	<div class="partner">
 		<img class='img-responsive' src="{{ asset('img/partneri/med-zupanija.gif') }}" /></a>

@@ -1993,6 +1993,32 @@ header.gallery-header {
       top: 0;
       position: relative; } }
 
+header.pages-header {
+  position: relative;
+  background-color: white;
+  background-attachment: fixed;
+  padding: 40px 20px;
+  margin-bottom: 20px; }
+  header.pages-header a {
+    text-decoration: none;
+    color: black; }
+  header.pages-header .flex-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+
 .statut-category-title {
   text-decoration: underline;
   font-weight: bold; }

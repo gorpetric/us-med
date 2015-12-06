@@ -3,10 +3,17 @@
 @section('title'){{'Statut'}}@stop
 
 @section('content')
+<header class="pages-header">
+	<div class="container">
+		<div class="flex-container">
+			<div class='title'>
+				<h1><a href="{{ route('pages.statut') }}"><span class="glyphicon glyphicon-file"></span> Statut udruge</a></h1>
+				<p class="help-block" style='margin-top:20px'><a href="{{ asset('STATUT.docx') }}">Preuzmi kopiju statuta <span class='glyphicon glyphicon-download'></span></a></p>
+			</div>
+		</div>
+	</div>
+</header>
 <div class="container">
-	<h1>Statut udruge</h1>
-	<p class="help-block"><a href="{{ asset('STATUT.docx') }}">Preuzmi kopiju statuta</a></p>
-	<hr style='border-color:#262626' />
 	<p style='text-align:center; width:75%; margin:0 auto'>Na temelju članka 13. Zakona o udrugama (″Narodne novine″ broj 74/14), izvanredna skupština udruge Studenata Međimurja na sjednici skupštine održanoj  24.09.2015., u Zagrebu, Ilica 10/III, donijela je</p>
 	<p style='margin:35px 0; text-align:center;'><strong>STATUT<br/>UDRUGE STUDENATA MEĐIMURJA</strong></p>
 	<p class="statut-category-title">I. OSNOVNE ODREDBE</p>

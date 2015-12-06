@@ -3,8 +3,16 @@
 @section('title'){{'Prijava'}}@stop
 
 @section('content')
+<header class="pages-header">
+	<div class="container">
+		<div class="flex-container">
+			<div class='title'>
+				<h1><a href="{{ route('pages.vodstvo') }}"><span class="glyphicon glyphicon-user"></span> Prijava</a></h1>
+			</div>
+		</div>
+	</div>
+</header>
 <div class="container login-page">
-	<h1>Prijava</h1><hr style='border-color:#262626' />
 	<form action="{{ route('auth.login') }}" method="POST" class="form-inline" autocomplete="off">
 		<div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
 			<label for="username">Korisničko ime:</label>

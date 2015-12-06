@@ -3,8 +3,16 @@
 @section('title'){{'Postani član'}}@stop
 
 @section('content')
+<header class="pages-header">
+	<div class="container">
+		<div class="flex-container">
+			<div class='title'>
+				<h1><a href="{{ route('pages.becomemember') }}"><span class="glyphicon glyphicon-user"></span> Postani član</a></h1>
+			</div>
+		</div>
+	</div>
+</header>
 <div class="container">
-<h1>Postani član</h1><hr style='border-color:#262626' />
 <p><strong>Zašto postati član Udruge studenata Međimurja?</strong></p>
 <p style='text-align:justify'>Udruga studenata Međimurja  pomaže studentima u ostvarivanju njihovih prava posredovanjem u komunikaciji između studenata i upravnih tijela Sveučilišta i drugih institucija. Organizira prigodne manifestacije kojima nastoji podržati interese članova i studenata, te promovirati i njegovati tradiciju i običaje Međimurske županije. Cilj je Udruge da tvori zajednicu u kojoj se njezini članovi osjećaju ugodno, u kojoj se mogu međusobno družiti, zatražiti pomoć te da se i izvan svoje županije osjećaju kao kod kuće.</p>
 <p><strong>Prava i obveze članova?</strong></p>

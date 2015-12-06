@@ -3,8 +3,16 @@
 @section('title'){{'Vodstvo'}}@stop
 
 @section('content')
+<header class="pages-header">
+	<div class="container">
+		<div class="flex-container">
+			<div class='title'>
+				<h1><a href="{{ route('pages.vodstvo') }}"><span class="glyphicon glyphicon-king"></span> Vodstvo</a></h1>
+			</div>
+		</div>
+	</div>
+</header>
 <div class="container">
-<h1>Vodstvo</h1><hr style='border-color:#262626' />
 <p class="help-block">Coming soon...</p>
 <div class="row">
 	<div class="col-sm-4 lead-out">
