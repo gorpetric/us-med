@@ -6,7 +6,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="{{ route('home') }}" class="navbar-brand"><img src="{{ asset('img/logo36x36.png') }}" />USM</a>
+			<a href="{{ route('home') }}" class="navbar-brand"><img src="{{ asset('img/logo36x36.png') }}" /><span style='margin-left:0.5em'>USM</span</a>
 		</div> <!-- navbar-header -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">

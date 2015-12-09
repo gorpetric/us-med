@@ -33,7 +33,6 @@
 		<h3 style='text-align:center'>Društvene mreže</h3>
 		<div class="social-media">
 			<a title='YouTube' target='_blank' href="https://www.youtube.com/channel/UC_7F2pfwq_lhOTTXqYrbcyQ"><img src="{{ asset('img/social-media-icons/youtube.png') }}" /></a>
-			<a title='Instagram' target='_blank' href="https://www.instagram.com/udruga.studenata.medjimurja"><img src="{{ asset('img/social-media-icons/instagram.png') }}" /></a>
 			<a title='Facebook' target='_blank' href="https://www.facebook.com/UdrugaStudenataMedjimurja"><img src="{{ asset('img/social-media-icons/facebook.png') }}" /></a>
 		</div>		
 	</div>
