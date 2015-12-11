@@ -138,10 +138,6 @@ Route::get('/galerija/{id}/delete', [
 /*
 * Pages
 */
-Route::get('/vodstvo', [
-	'uses' => '\App\Http\Controllers\HomeController@getVodstvo',
-	'as' => 'pages.vodstvo'
-]);
 Route::get('/povijest', [
 	'uses' => '\App\Http\Controllers\HomeController@getPovijest',
 	'as' => 'pages.povijest'
@@ -263,4 +259,10 @@ Route::post('/admin/pocetna-slika/{action?}', [
 	'uses' => '\App\Http\Controllers\AdminController@postHomeHeaderImg',
 	'as' => 'admin.homeheaderimg',
 	'middleware' => ['auth'],
+]);
+
+// Leads
+Route::get('/vodstvo', [
+	'uses' => '\App\Http\Controllers\LeadController@index',
+	'as' => 'lead.index'
 ]);

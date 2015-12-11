@@ -17,7 +17,7 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">O nama <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="{{ route('pages.vodstvo') }}">Vodstvo</a></li>
+						<li><a href="{{ route('lead.index') }}">Vodstvo</a></li>
 						<li><a href="{{ route('pages.povijest') }}">Povijest</a></li>
 						<li><a href="{{ route('pages.statut') }}">Statut</a></li>
 						<li><a href="{{ route('pages.partners') }}">Partneri</a></li>
