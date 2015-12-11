@@ -20,7 +20,11 @@
 				<p class="help-block">{{ $errors->first('body') }}</p>
 			@endif
 		</div>
-		<p class="help-block">Markdown is supported</p>
+		<p class="help-block">
+			Markdown is supported
+			<span class="glyphicon glyphicon-minus"></span>
+			<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">cheatsheet</a>
+		</p>
 		<input type="submit" value="Uredi" class="btn btn-default">
 		<input type="hidden" name="_token" value="{{ Session::token() }}">
 	</form>

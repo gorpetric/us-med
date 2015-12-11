@@ -21,7 +21,6 @@
 		<hr>
 		<h3><a href="{{ route('projects.project', ['slug' => $project->slug]) }}">{{ $project->title }}</a></h3>
 		<p class="help-block"><span class="glyphicon glyphicon-dashboard"></span> {{ $project->created_at->format('d.m.Y. H:i') }}</p>
-		<p>{{ $project->user->getFullName() }}</p>
 	</div>
 </header>
 <div class="projekt">

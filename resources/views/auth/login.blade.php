@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="flex-container">
 			<div class='title'>
-				<h1><a href="{{ route('pages.vodstvo') }}"><span class="glyphicon glyphicon-user"></span> Prijava</a></h1>
+				<h1><a href="{{ route('auth.login') }}"><span class="glyphicon glyphicon-user"></span> Prijava</a></h1>
 			</div>
 		</div>
 	</div>

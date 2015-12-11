@@ -81,7 +81,7 @@ class HomeController extends Controller
 
         $podaci = $request->all();
         Mail::send('email.zaudrugu', ['podaci' => $podaci], function($m) use($request){
-            $m->to($request->input('email'), $request->input('first_name').' '.$request->input('last_name'))->subject('Novi član - zahtjev');
+            $m->to('udruga.studenata.medjimurja@gmail.com', $request->input('first_name').' '.$request->input('last_name'))->subject('Novi član - zahtjev');
         });
         Mail::send('email.touser', ['podaci' => $podaci], function($m) use($request){
             $m->to($request->input('email'), $request->input('first_name').' '.$request->input('last_name'))->subject('Zahtjev za članstvo zaprimljen');

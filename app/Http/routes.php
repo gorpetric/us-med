@@ -264,5 +264,30 @@ Route::post('/admin/pocetna-slika/{action?}', [
 // Leads
 Route::get('/vodstvo', [
 	'uses' => '\App\Http\Controllers\LeadController@index',
-	'as' => 'lead.index'
+	'as' => 'lead.index',
+]);
+Route::get('/vodstvo/new', [
+	'uses' => '\App\Http\Controllers\LeadController@getNew',
+	'as' => 'lead.new',
+	'middleware' => ['auth'],
+]);
+Route::post('/vodstvo/new', [
+	'uses' => '\App\Http\Controllers\LeadController@postNew',
+	'as' => 'lead.new',
+	'middleware' => ['auth'],
+]);
+Route::get('/vodstvo/delete/{id}', [
+	'uses' => '\App\Http\Controllers\LeadController@getDelete',
+	'as' => 'lead.delete',
+	'middleware' => ['auth'],
+]);
+Route::get('/vodstvo/edit/{id}', [
+	'uses' => '\App\Http\Controllers\LeadController@getEdit',
+	'as' => 'lead.edit',
+	'middleware' => ['auth'],
+]);
+Route::post('/vodstvo/edit/{id}', [
+	'uses' => '\App\Http\Controllers\LeadController@postEdit',
+	'as' => 'lead.edit',
+	'middleware' => ['auth'],
 ]);
