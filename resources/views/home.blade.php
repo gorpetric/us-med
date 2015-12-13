@@ -13,7 +13,7 @@
 			<img class="img-responsive home-logo" src="{{ asset('img/LOGOvektorski.png') }}" />
 		</div>
 		<div class="col-sm-6">
-			<p style="text-align:justify"><strong>Udruga studenata Međimurja</strong> jedna je od studentskih zavičajnih udruga koje djeluju na <strong>Sveučilištu u Zagrebu</strong> sa sjedištem u <strong>Ulici Ljudevita Gaja 2a</strong>. Cilj postojanja Udruge je okupljanje i povezivanje što većeg broja međimurskih studenata, te promicanje i zaštita njihovih interesa. Razmjena iskustava, organiziranje međusobnih druženja, stvaranje veza sa drugim srodnim udrugama te pomaganje novim studentima na početku njihovog fakultetskog obrazovanja samo su neke od aktivnosti koje Udruga promiče i kojim se bavi.</p>
+			<p style="text-align:justify"><strong>Udruga studenata Međimurja</strong> jedna je od studentskih zavičajnih udruga koje djeluju na <strong>Sveučilištu u Zagrebu</strong> sa sjedištem u <strong>Ulici Ljudevita Gaja 2a</strong>. Cilj postojanja Udruge je okupljanje i povezivanje što većeg broja međimurskih studenata, te promicanje i zaštita njihovih interesa. Razmjena iskustava, organiziranje međusobnih druženja, stvaranje veza s drugim srodnim udrugama te pomaganje novim studentima na početku njihovog fakultetskog obrazovanja samo su neke od aktivnosti koje Udruga promiče i kojim se bavi.</p>
 			<p style='text-align:center'>
 				<a href="{{ route('lead.index') }}">Vodstvo</a>
 				<span class='glyphicon glyphicon-minus'></span>
