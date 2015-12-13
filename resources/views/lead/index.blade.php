@@ -25,10 +25,10 @@
 	</div>
 </header>
 <div class="container">
-	<div class="row">
+	<div class="rest-flex">
 	@foreach($leads as $lead)
 		@if($lead->mainRow())
-			<div class="col-sm-4 lead-out">
+			<div class="lead-out">
 				<div class="lead-in">
 					<div class="info">
 						{!! $lead->img() !!}
@@ -64,8 +64,14 @@
 					</p>
 				</div>
 			</div>
-		@else
-			<div class="col-sm-3 lead-out">
+		@endif
+	@endforeach
+	</div>
+	<hr style='border-color:#262626'>
+	<div class="rest-flex">
+	@foreach($leads as $lead)
+		@if(!$lead->mainRow())
+			<div class="lead-out">
 				<div class="lead-in">
 					<div class="info">
 						{!! $lead->img() !!}

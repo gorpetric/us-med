@@ -2129,7 +2129,6 @@ header.pages-header {
       position: relative; }
       .lead-out .lead-in .info img {
         margin: 0 auto;
-        width: 100%;
         height: 250px; }
       .lead-out .lead-in .info .text {
         position: absolute;
@@ -2170,6 +2169,29 @@ header.pages-header {
   .lead-out .sm img {
     width: 25px;
     height: 25px; }
+
+.rest-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .rest-flex .lead-out {
+    min-width: 23%; }
+    @media (max-width: 768px) {
+      .rest-flex .lead-out {
+        min-width: 100%; } }
 
 header.profile {
   position: relative;
