@@ -95,11 +95,21 @@ class ProjectsController extends Controller
     	$this->validate($request, [
             'title' => 'required',
             'body' => 'required',
+            'image' => 'image',
         ]);
+
+        if($request->hasFile('image')){
+            unlink(public_path('img/projects/' . $project->image));
+            $image = md5(Carbon::now()) . '.' . $request->file('image')->guessClientExtension();
+            $request->file('image')->move('img/projects', $image);
+        } else {
+            $image = $project->image;
+        }
 
         Project::where('id', $project->id)->update([
         	'title' => $request->input('title'),
             'body' => $request->input('body'),
+            'image' => $image,
         ]);
 
         notify()->flash('Projekt uspješno uređen', 'success', [

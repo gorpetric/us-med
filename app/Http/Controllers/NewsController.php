@@ -97,11 +97,21 @@ class NewsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
+            'image' => 'image',
         ]);
+
+        if($request->hasFile('image')){
+            unlink(public_path('img/news/' . $story->image));
+            $image = md5(Carbon::now()) . '.' . $request->file('image')->guessClientExtension();
+            $request->file('image')->move('img/news', $image);
+        } else {
+            $image = $story->image;
+        }
 
         News::where('id', $story->id)->update([
             'title' => $request->input('title'),
             'body' => $request->input('body'),
+            'image' => $image,
         ]);
 
         notify()->flash('Vijest uspješno uređena', 'success', [
