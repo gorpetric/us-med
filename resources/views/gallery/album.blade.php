@@ -12,7 +12,7 @@
 			<div class='links'>
 				@if(Auth::check())
 					@if(Auth::user()->isAdmin())
-						<a class='btn btn-warning delete-link' href="{{ route('gallery.delete', ['id' => $album->id]) }}">Obriši album</a>
+						<a class='btn btn-warning delete-link' href="{{ route('gallery.delete', ['id' => $album->id]) }}" data-swal-text="Album i sve slike iz albuma će biti izgubljeni!">Obriši album</a>
 					@endif
 				@endif
 			</div>
@@ -45,6 +45,11 @@
 					<a href="{{ asset('img/gallery/'.$image->name.'') }}" target='_blank' data-lightbox='album'>
 						<img class='img-responsive' src="{{ asset('img/gallery/thumbs/'.$image->name.'') }}">
 					</a>
+					@if(Auth::check())
+						@if(Auth::user()->isAdmin())
+							<a class='delete-link' href="{{ route('gallery.deleteImage', ['id'=>$image->id]) }}" data-swal-text="Slika se kompletno gubi iz albuma.">Obriši</a>
+						@endif
+					@endif
 				@endforeach
 			</div>
 		</div>
@@ -87,11 +92,11 @@ $('.delete-link').click(function(e){
 	e.preventDefault();
 	swal({
 		title: "Sigurno?",
-		text: "Album i sve slike iz albuma će biti izgubljeni!",
+		text: that.attr('data-swal-text'),
 		type: "warning",
 		showCancelButton: true,
 		confirmButtonColor: "#DD6B55",
-		confirmButtonText: "Da, obriši album!",
+		confirmButtonText: "Da, provedi akciju!",
 		//closeOnConfirm: false
 	},
 		function(){

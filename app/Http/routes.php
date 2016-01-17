@@ -134,6 +134,11 @@ Route::get('/galerija/{id}/delete', [
 	'as' => 'gallery.delete',
 	'middleware' => ['auth'],
 ]);
+Route::get('/galerija/slika/{id}/delete', [
+	'uses' => '\App\Http\Controllers\GalleryController@getDeleteImage',
+	'as' => 'gallery.deleteImage',
+	'middleware' => ['auth'],
+]);
 
 /*
 * Pages

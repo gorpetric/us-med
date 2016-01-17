@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Album;
+use App\Image as DBImage;
 use Illuminate\Http\Request;
 use Image;
 
@@ -84,5 +85,23 @@ class GalleryController extends Controller
             'noConfirm' => true,
         ]);
         return redirect()->route('gallery.index');
+    }
+
+    public function getDeleteImage($id)
+    {
+        $image = DBImage::where('id', $id)->first();
+        if(!$image || !Auth::user()->isAdmin()){
+            return redirect()->route('home');
+        }
+
+        unlink(public_path('img/gallery/' . $image->name));
+        unlink(public_path('img/gallery/thumbs/' . $image->name));
+        $image->delete();
+
+        notify()->flash('Slika uspješno obrisana', 'success', [
+            'timer' => 2000,
+            'noConfirm' => true,
+        ]);
+        return redirect()->back();
     }
 }
